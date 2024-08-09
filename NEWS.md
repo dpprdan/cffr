@@ -1,5 +1,9 @@
 # cffr (development version)
 
+-   Adapt extraction of orcid to **R \> 4.4.1**.
+
+# cffr 1.1.0
+
 -   Now **cffr** adds automatically dois to packages on **CRAN** (e.g.
     <https://doi.org/10.32614/CRAN.package.cffr>):
     -   If the package has a `CITATION` file providing a doi, the `CITATION` doi
@@ -10,6 +14,7 @@
         the package dependency is on **CRAN**, the **CRAN** doi would be used
         for the dependency in the `references` key.
 -   Extract `commit` from `RemoteSha`.
+-   Update `cran_to_spdx` dataset.
 
 # cffr 1.0.1
 

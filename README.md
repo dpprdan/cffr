@@ -9,6 +9,7 @@
 [![CRAN-results](https://badges.cranchecks.info/worst/cffr.svg)](https://cran.r-project.org/web/checks/check_results_cffr.html)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/cffr?color=blue)](https://cran.r-project.org/package=cffr)
 [![R-CMD-check](https://github.com/ropensci/cffr/actions/workflows/check-full.yaml/badge.svg)](https://github.com/ropensci/cffr/actions/workflows/check-full.yaml)
+[![R-hub](https://github.com/ropensci/cffr/actions/workflows/rhub.yaml/badge.svg)](https://github.com/ropensci/cffr/actions/workflows/rhub.yaml)
 [![codecov](https://codecov.io/gh/ropensci/cffr/branch/main/graph/badge.svg?token=YRO3XL8RWK)](https://app.codecov.io/gh/ropensci/cffr)
 [![r-universe](https://ropensci.r-universe.dev/badges/cffr)](https://ropensci.r-universe.dev/cffr)
 [![CITATION-cff](https://github.com/ropensci/cffr/actions/workflows/cff-validator.yml/badge.svg)](https://github.com/ropensci/cffr/actions/workflows/cff-validator.yml)
@@ -49,7 +50,7 @@ interest:
 *— Nat Friedman (@natfriedman) July 27, 2021*
 
 See [Enhanced support for citations on
-GitHub](https://github.blog/2021-08-19-enhanced-support-citations-github/)
+GitHub](https://github.blog/news-insights/company-news/enhanced-support-citations-github/)
 ([Smith 2021](#ref-smith2021)) for more info.
 
 ### Related projects
@@ -72,7 +73,7 @@ file and the `CITATION` file (if present) of your package. Note that
 **cffr** works best if your package pass
 `R CMD check/devtools::check()`.
 
-As per 2024-07-19 there are at least 288 repos on GitHub using **cffr**.
+As per 2024-08-09 there are at least 290 repos on GitHub using **cffr**.
 [Check them out
 here](https://github.com/search?q=cffr%20path%3A**%2FCITATION.cff&type=code).
 
@@ -228,6 +229,7 @@ test <- cff_create("rmarkdown")
       url: https://github.com/rstudio/rmarkdown
     repository: https://CRAN.R-project.org/package=rmarkdown
     repository-code: https://github.com/rstudio/rmarkdown
+    commit: '2.27'
     url: https://pkgs.rstudio.com/rmarkdown/
     date-released: '2024-05-17'
     contact:
@@ -418,7 +420,6 @@ test <- cff_create("rmarkdown")
         name: R Foundation for Statistical Computing
         address: Vienna, Austria
       year: '2024'
-      doi: 10.32614/CRAN.package.methods
     - type: software
       title: tinytex
       abstract: 'tinytex: Helper Functions to Install and Maintain TeX Live, and Compile
@@ -444,7 +445,6 @@ test <- cff_create("rmarkdown")
         name: R Foundation for Statistical Computing
         address: Vienna, Austria
       year: '2024'
-      doi: 10.32614/CRAN.package.tools
     - type: software
       title: utils
       abstract: 'R: A Language and Environment for Statistical Computing'
@@ -455,7 +455,6 @@ test <- cff_create("rmarkdown")
         name: R Foundation for Statistical Computing
         address: Vienna, Austria
       year: '2024'
-      doi: 10.32614/CRAN.package.utils
     - type: software
       title: xfun
       abstract: 'xfun: Supporting Functions for Packages Maintained by ''Yihui Xie'''
@@ -569,27 +568,6 @@ test <- cff_create("rmarkdown")
       year: '2024'
       doi: 10.32614/CRAN.package.digest
     - type: software
-      title: dygraphs
-      abstract: 'dygraphs: Interface to ''Dygraphs'' Interactive Time Series Charting
-        Library'
-      notes: Suggests
-      url: https://github.com/rstudio/dygraphs
-      repository: https://CRAN.R-project.org/package=dygraphs
-      authors:
-      - family-names: Vanderkam
-        given-names: Dan
-        website: http://dygraphs.com/
-      - family-names: Allaire
-        given-names: JJ
-      - family-names: Owen
-        given-names: Jonathan
-      - family-names: Gromer
-        given-names: Daniel
-      - family-names: Thieurmel
-        given-names: Benoit
-      year: '2024'
-      doi: 10.32614/CRAN.package.dygraphs
-    - type: software
       title: fs
       abstract: 'fs: Cross-Platform File System Operations Based on ''libuv'''
       notes: Suggests
@@ -607,27 +585,6 @@ test <- cff_create("rmarkdown")
       year: '2024'
       doi: 10.32614/CRAN.package.fs
     - type: software
-      title: rsconnect
-      abstract: 'rsconnect: Deploy Docs, Apps, and APIs to ''Posit Connect'', ''shinyapps.io'',
-        and ''RPubs'''
-      notes: Suggests
-      url: https://rstudio.github.io/rsconnect/
-      repository: https://CRAN.R-project.org/package=rsconnect
-      authors:
-      - family-names: Atkins
-        given-names: Aron
-        email: aron@posit.co
-      - family-names: Allen
-        given-names: Toph
-      - family-names: Wickham
-        given-names: Hadley
-      - family-names: McPherson
-        given-names: Jonathan
-      - family-names: Allaire
-        given-names: JJ
-      year: '2024'
-      doi: 10.32614/CRAN.package.rsconnect
-    - type: software
       title: downlit
       abstract: 'downlit: Syntax Highlighting and Automatic Linking'
       notes: Suggests
@@ -640,20 +597,6 @@ test <- cff_create("rmarkdown")
       year: '2024'
       doi: 10.32614/CRAN.package.downlit
       version: '>= 0.4.0'
-    - type: software
-      title: katex
-      abstract: 'katex: Rendering Math to HTML, ''MathML'', or R-Documentation Format'
-      notes: Suggests
-      url: https://docs.ropensci.org/katex/
-      repository: https://CRAN.R-project.org/package=katex
-      authors:
-      - family-names: Ooms
-        given-names: Jeroen
-        email: jeroen@berkeley.edu
-        orcid: https://orcid.org/0000-0002-4035-0289
-      year: '2024'
-      doi: 10.32614/CRAN.package.katex
-      version: '>= 1.4.0'
     - type: software
       title: sass
       abstract: 'sass: Syntactically Awesome Style Sheets (''Sass'')'
@@ -769,19 +712,6 @@ test <- cff_create("rmarkdown")
         email: davis@posit.co
       year: '2024'
       doi: 10.32614/CRAN.package.vctrs
-    - type: software
-      title: cleanrmd
-      abstract: 'cleanrmd: Clean Class-Less ''R Markdown'' HTML Documents'
-      notes: Suggests
-      url: https://pkg.garrickadenbuie.com/cleanrmd/
-      repository: https://CRAN.R-project.org/package=cleanrmd
-      authors:
-      - family-names: Aden-Buie
-        given-names: Garrick
-        email: garrick@adenbuie.com
-        orcid: https://orcid.org/0000-0002-7111-0077
-      year: '2024'
-      doi: 10.32614/CRAN.package.cleanrmd
     - type: software
       title: withr
       abstract: 'withr: Run Code ''With'' Temporarily Modified Global State'
@@ -1003,7 +933,7 @@ Exchange Schema for Software Metadata*. KNB Data Repository.
 <div id="ref-smith2021" class="csl-entry">
 
 Smith, Arfon. 2021. “Enhanced Support for Citations on GitHub.”
-<https://github.blog/2021-08-19-enhanced-support-citations-github/>.
+<https://github.blog/news-insights/company-news/enhanced-support-citations-github/>.
 
 </div>
 
