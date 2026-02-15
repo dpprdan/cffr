@@ -14,16 +14,16 @@
 #'
 #' @param outfile The name and path of the `CITATION.cff` to be created.
 #'
-#' @param r_citation Logical `TRUE/FALSE`. On `TRUE` the **R** package citation
-#'   (i.e. `inst/CITATION`) would be created or updated.
-#'   **No backup copy would be created**, for more control use
+#' @param r_citation Logical `TRUE/FALSE`. When `TRUE`, the **R** package
+#'   citation (i.e., `inst/CITATION`) is created or updated.
+#'   **No backup copy is created**. For more control, use
 #'   [cff_write_citation()].
 #'
-#' @param verbose Logical `TRUE/FALSE`. On `TRUE` the function would display
+#' @param verbose Logical `TRUE/FALSE`. When `TRUE`, the function displays
 #'   informative messages.
 #'
-#' @param validate Logical `TRUE/FALSE`. Should the new file be
-#'   validated using `cff_validate()`?
+#' @param validate Logical `TRUE/FALSE`. Should the new file be validated
+#'   using `cff_validate()`?
 #'
 #' @param encoding The name of the encoding to be assumed. Default is `"UTF-8"`,
 #'   but it can be any other value as accepted by [iconv()], such as

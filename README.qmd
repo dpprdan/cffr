@@ -45,7 +45,7 @@ examples for working with .cff files more generally.
 
 ## What is a `CITATION.cff` file?
 
-[Citation File Format (CFF](https://citation-file-format.github.io/))
+[Citation File Format (CFF)](https://citation-file-format.github.io/)
 [@druskat_citation_2021] (v1.2.0) are plain text files with human- and
 machine-readable citation information for software (and datasets). Code
 developers can include them in their repositories to let others know how to
@@ -64,6 +64,7 @@ support is of special interest:
 #| out-width: '400'
 #| fig-align: center
 #| fig-alt: Tweet of Nat Friedman about CFF files
+#| fig-cap: Tweet of Nat Friedman about CFF files
 knitr::include_graphics("vignettes/tweet-1.png")
 ```
 
@@ -174,9 +175,9 @@ install.packages(
 
 ### Example
 
-By default most often from within your package folder you'll simply run
-`cff_write()`, that creates a `cff` object, write it on a `CITATION.cff` file
-and validates it on a single command:
+Most commonly, from within your package folder, you'll simply run `cff_write()`,
+which creates a `cff` object, writes it to a `CITATION.cff` file, and validates
+it in a single command:
 
 ```{r}
 #| eval: false
@@ -214,6 +215,7 @@ test <- cff_create("knitr")
 #| comment: ''
 test
 ```
+
 </details>
 
 We can validate the result using `cff_validate()`:
@@ -222,15 +224,15 @@ We can validate the result using `cff_validate()`:
 cff_validate(test)
 ```
 
-Check the [docs](https://docs.ropensci.org/cffr//reference/index.html) and
+Check the [docs](https://docs.ropensci.org/cffr/reference/index.html) and
 `vignette("cffr", package = "cffr")` to learn how to work with `cff` objects.
 
 ### Keep your `CITATION.cff` file up-to-date
 
 #### GitHub Actions
 
-The easiest way for keeping you `CITATION.cff` file up-to-date is using GitHub
-Actions. Use `cff_gha_update()`function to install a GitHub Action that would
+The easiest way to keep your `CITATION.cff` file up-to-date is using GitHub
+Actions. Use `cff_gha_update()` function to install a GitHub Action that will
 update your `CITATION.cff` file on the following events:
 
 -   When you publish a new release of the package on your GitHub repo.
@@ -241,8 +243,8 @@ update your `CITATION.cff` file on the following events:
 #| eval: false
 cff_gha_update()
 
-#> i Installing update-citation-cff.yaml on './.github/workflows'
-#> i Adding .github to .Rbuildignore
+#> ✔ Installing ./.github/workflows/update-citation-cff.yaml
+#> ℹ Adding ".github" to .Rbuildignore
 ```
 
 See the example workflow file

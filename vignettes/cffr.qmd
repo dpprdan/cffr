@@ -37,11 +37,11 @@ developers can include them in their repositories to let others know how to
 correctly cite their software.
 
 This format is gaining popularity within the software citation ecosystem.
-Recently
+Recently,
 [GitHub](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-citation-files),
 [Zenodo](https://citation-file-format.github.io/#/supported-by-zenodo-) and
 [Zotero](https://citation-file-format.github.io/#/supported-by-zotero-) have
-included full support of this citation format [@druskat_stephan_making_2021].
+fully supported this citation format [@druskat_stephan_making_2021].
 
 GitHub support is of special interest:
 
@@ -61,7 +61,7 @@ for more information.
 
 ## Creating a `CITATION.cff` file for my R package
 
-With **cffr** creating a `CITATION.cff` file is quite straightforward. You just
+Creating a `CITATION.cff` file with **cffr** is straightforward. You simply
 need to run `cff_write()`:
 
 ```{r}
@@ -86,11 +86,10 @@ Congratulations! Now you have a full `CITATION.cff` file for your **R** package.
 ## Modifying your `CITATION.cff` file
 
 You can easily customize the `cff` object (a custom class of **cffr**) using the
-coercion system provided in the package, as well as making use of the `keys`
-argument.
+coercion system provided in the package, as well as the `keys` argument.
 
-We would create a `cff` object using `cff()` (for example purposes only) and we
-would add or modify contents of it.
+We create a `cff` object using `cff()` (for example purposes only) and then add
+or modify its contents.
 
 ### Adding new fields
 
@@ -110,9 +109,8 @@ can be displayed with `cff_schema_keys()`:
 cff_schema_keys()
 ```
 
-In this case, we are going to add `url`, `version` and `repository`. We would
-also overwrite the `title` key. We just need to add those arguments to
-`cff_modify()`:
+In this case, we add `url`, `version`, and `repository`. We also overwrite
+the `title` key. We add these arguments to `cff_modify()`:
 
 ```{r}
 #| label: modify
@@ -138,9 +136,8 @@ cff_validate(modobject)
 (see `?person` and `?bibentry`) according to the [Citation File Format
 schema](https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md).
 
-Following the previous example, we are going to add a new author first. For
-doing that, we need first to extract the current author of the package and
-append the coerced person:
+Following the previous example, we first add a new author. To do that, we need
+to extract the current author of the package and append the coerced person:
 
 ```{r}
 #| label: includeauthor

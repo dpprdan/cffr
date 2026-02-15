@@ -14,8 +14,8 @@ get_desc_abstract <- function(pkg) {
   abstract
 }
 
-#' Mapped to persons with roles "aut","cre"
-#' Feeback needed: is this approach correct?
+#' Mapped to persons with roles "aut", "cre"
+#' Feedback needed: is this approach correct?
 #' On CRAN, only first aut is used
 #' @noRd
 get_desc_authors <- function(pkg, authors_roles = c("aut", "cre")) {

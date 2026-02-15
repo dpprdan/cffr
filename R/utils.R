@@ -2,7 +2,7 @@
 
 #' Clean strings
 #'
-#' @param str The string to be cleaned
+#' @param str A string to be cleaned.
 #' @noRd
 clean_str <- function(str) {
   # Collapse to single char
@@ -36,7 +36,7 @@ clean_str <- function(str) {
 
 #' Drop nulls from list
 #' @source https://github.com/cboettig/codemeta/blob/master/R/utils.R
-#' @param x The list to be cleaned
+#' @param x A list to be cleaned.
 #' @noRd
 drop_null <- function(x) {
   # Already been here
@@ -55,10 +55,10 @@ print_snapshot <- function(title = "----", obj) {
 }
 
 #' Search a package on available repos
-#' @param name name of the package
-#' @param avail Data frame with the packages available, See
+#' @param name Name of the package.
+#' @param avail Data frame with available packages. See
 #' [utils::available.packages()].
-#' @param repos vector of repos
+#' @param repos Vector of repositories.
 #' @noRd
 search_on_repos <- function(
   name,
@@ -89,10 +89,10 @@ search_on_repos <- function(
 }
 
 
-#' Detect current repos
+#' Detect current repositories
 #'
-#' Detect the current repos of the user. If not set, use Cloud
-#' @param repos Current repos setup
+#' Detect the current repositories of the user. If not set, use CRAN.
+#' @param repos Current repositories setup.
 #' @noRd
 detect_repos <- function(repos = getOption("repos")) {
   # Not use RSPM

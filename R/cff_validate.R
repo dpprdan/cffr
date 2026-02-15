@@ -25,7 +25,7 @@
 #' @return
 #'
 #' A message indicating the result of the validation and an invisible value
-#' `TRUE/FALSE`. On error, the results would have an attribute `"errors"`
+#' `TRUE/FALSE`. On error, the result has an attribute `"errors"`
 #' containing the error summary (see **Examples** and [attr()]).
 #'
 #' @param x This is expected to be either a full `cff` object created

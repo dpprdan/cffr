@@ -10,7 +10,7 @@ cff_parse_citation(bib)
 \item{bib}{A \code{bibentry} object.}
 }
 \value{
-A \code{bibentry} in format \code{cff}.
+A \code{bibentry} in format \code{\link{cff}}.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Please use \code{\link[=as_cff.bibentry]{as_cff.bibentry()}} method

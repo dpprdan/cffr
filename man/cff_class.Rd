@@ -32,9 +32,9 @@
 \description{
 \subsection{The \code{cff} class}{
 
-\href{https://cran.r-project.org/package=cffr}{\strong{cffr}} implements a S3 object with
-\code{\link{class}} \code{cff}, that is used to represent the information of a \code{CITATION.cff}
-file in \strong{R}.
+\href{https://cran.r-project.org/package=cffr}{\strong{cffr}} implements an S3 object with
+\code{\link{class}} \code{cff}, which is used to represent the information of a
+\code{CITATION.cff} file in \strong{R}.
 
 Under the hood, a \code{cff} object is simply a named \code{\link{list}} to which we added
 additional methods, most notably \code{\link{print}} and \code{\link[=as_cff]{as_cff()}}.
@@ -62,24 +62,22 @@ is.list(a_cff_object)
 #> [1] TRUE
 }\if{html}{\out{</div>}}
 
-\code{\link[=as_cff]{as_cff()}} not only converts a \code{list} to \code{cff} but also removes items (known as
-\code{keys} in CFF terminology) that are \code{NULL} or \code{NA}.
+\code{\link[=as_cff]{as_cff()}} not only converts a \code{list} to \code{cff} but also removes items (known
+as \code{keys} in CFF terminology) that are \code{NULL} or \code{NA}.
 \subsection{Sub-classes}{
 
 \strong{cffr} implements two special sub-classes of \code{cff}, with the aim of
 representing two special types of objects defined in the \href{https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md}{CFF Schema}:
 \itemize{
-\item \code{definition.person} and \code{definition.entity}: CFF definition for sub-lists
-representing persons or entities. In \strong{cffr} the sub-class \code{cff_pers_lst}
+\item \code{definition.person} and \code{definition.entity}: CFF definitions for sub-lists
+representing persons or entities. In \strong{cffr}, the sub-class \code{cff_pers_lst}
 has been implemented to collect an array of \code{definition.person/entity},
-where each individual person or entity of the array has a sub-class
-\code{cff_pers}.
-\item Similarly, \code{definition.reference} is the definition of CFF for collecting
+where each individual person or entity has a sub-class \code{cff_pers}.
+\item Similarly, \code{definition.reference} is the CFF definition for collecting
 references to related works and other articles of software used in the
 development of the main work of the CFF file. This is implemented in
 \strong{cffr} as a sub-class named \code{cff_ref_lst} for arrays of
-\code{definition.reference} where each element of the array has a sub-class named
-\code{cff_ref}.
+\code{definition.reference}, where each element has a sub-class named \code{cff_ref}.
 }
 
 These two sub-classes do not provide full valid \code{cff} objects, but adapt
@@ -140,7 +138,8 @@ ref_list
 #>     given-names: Kirill
 #>   year: '2025'
 #>   notes: R package version 2.3.12
-#>   url: https://yaml.r-lib.org
+#>   url: https://CRAN.R-project.org/package=yaml
+#>   doi: 10.32614/CRAN.package.yaml
 
 class(ref_list)
 #> [1] "cff_ref_lst" "cff"
@@ -212,8 +211,8 @@ cff_validate(cff_valid)
 
 \subsection{Base methods provided by \strong{cffr}}{
 
-\strong{cffr} version 1.0.0 provides additional S3 Methods for common coercing
-functions of the \strong{base} and \strong{utils} package.
+\strong{cffr} version 1.0.0 provides additional S3 methods for common coercion
+functions of the \strong{base} and \strong{utils} packages.
 \subsection{\code{\link[=as.data.frame]{as.data.frame()}}}{
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{minimal_cff <- cff()
@@ -314,7 +313,8 @@ toBibtex(cit)
 #>   author = \{Jeremy Stephens and Kirill Simonov\},
 #>   year = \{2025\},
 #>   note = \{R package version 2.3.12\},
-#>   url = \{https://yaml.r-lib.org\},
+#>   url = \{https://CRAN.R-project.org/package=yaml\},
+#>   doi = \{10.32614/CRAN.package.yaml\},
 #> \}
 
 # cff_pers, cff_pers_lst

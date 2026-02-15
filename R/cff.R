@@ -14,14 +14,14 @@
 #'
 #' @param path `r lifecycle::badge("deprecated")` `path` is no longer supported,
 #'   use [cff_read_cff_citation()] instead.
-#' @param ... Named arguments to be used for creating a `cff` object. If no
+#' @param ... Named arguments to be used for creating a [`cff`] object. If no
 #'   arguments are supplied (the default behavior), a minimal valid `cff`
 #'   object is created.
 #'
 #' @details
 #'
-#' `cff()` would convert `_` in the name of the argument to `-`, e.g.
-#' `cff_version = "1.2.0"` would be converted to `cff-version = "1.2.0"`.
+#' `cff()` converts `_` in the argument name to `-`. For example,
+#' `cff_version = "1.2.0"` is converted to `cff-version = "1.2.0"`.
 #'
 #' Valid arguments are those specified on [cff_schema_keys()]:
 #'
