@@ -76,7 +76,7 @@ file and the `CITATION` file (if present) from your package. Note that
 **cffr** works best if your package passes
 `R CMD check/devtools::check()`.
 
-As per 2026-02-15 there are at least 470 repos on GitHub using **cffr**.
+As per 2026-02-16 there are at least 466 repos on GitHub using **cffr**.
 [Check them out
 here](https://github.com/search?q=cffr%20path%3A**%2FCITATION.cff&type=code).
 
@@ -333,23 +333,6 @@ test <- cff_create("knitr")
         orcid: https://orcid.org/0000-0002-7111-0077
       year: '2026'
       doi: 10.32614/CRAN.package.bslib
-    - type: software
-      title: DBI
-      abstract: 'DBI: R Database Interface'
-      notes: Suggests
-      url: https://dbi.r-dbi.org
-      repository: https://CRAN.R-project.org/package=DBI
-      authors:
-      - name: R Special Interest Group on Databases (R-SIG-DB)
-      - family-names: Wickham
-        given-names: Hadley
-      - family-names: Müller
-        given-names: Kirill
-        email: kirill@cynkra.com
-        orcid: https://orcid.org/0000-0002-1416-3412
-      year: '2026'
-      doi: 10.32614/CRAN.package.DBI
-      version: '>= 0.4-1'
     - type: software
       title: digest
       abstract: 'digest: Create Compact Hash Digests of R Objects'
