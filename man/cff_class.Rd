@@ -30,11 +30,9 @@
 \alias{as.person.cff_ref_lst}
 \title{The \code{cff} class}
 \description{
-\subsection{The \code{cff} class}{
-
 \href{https://cran.r-project.org/package=cffr}{\strong{cffr}} implements an S3 object with
-\code{\link{class}} \code{cff}, which is used to represent the information of a
-\code{CITATION.cff} file in \strong{R}.
+\code{\link{class}} \code{cff}, which is used to represent the information of a \code{CITATION.cff}
+file in \strong{R}.
 
 Under the hood, a \code{cff} object is simply a named \code{\link{list}} to which we added
 additional methods, most notably \code{\link{print}} and \code{\link[=as_cff]{as_cff()}}.
@@ -62,8 +60,8 @@ is.list(a_cff_object)
 #> [1] TRUE
 }\if{html}{\out{</div>}}
 
-\code{\link[=as_cff]{as_cff()}} not only converts a \code{list} to \code{cff} but also removes items (known
-as \code{keys} in CFF terminology) that are \code{NULL} or \code{NA}.
+\code{\link[=as_cff]{as_cff()}} not only converts a \code{list} to \code{cff} but also removes items (known as
+\code{keys} in CFF terminology) that are \code{NULL} or \code{NA}.
 \subsection{Sub-classes}{
 
 \strong{cffr} implements two special sub-classes of \code{cff}, with the aim of
@@ -162,8 +160,6 @@ class(ref_list[[1]])
 }\if{html}{\out{</div>}}
 }
 
-}
-
 \subsection{Valid \code{cff} objects}{
 
 Creating a \code{cff} object does not ensure its validity according to the \href{https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md}{CFF Schema}:
@@ -172,7 +168,7 @@ Creating a \code{cff} object does not ensure its validity according to the \href
 #> [1] "cff"
 
 cff_validate(a_cff_object)
-#> == Validating cff ===============================================================================================
+#> == Validating cff ==============================================================
 #> x Oops! This <cff> has the following errors:
 #> * cff.authors: is required
 #> * cff["cff-version"]: is required
@@ -204,7 +200,7 @@ cff_valid
 #> title: My title
 
 cff_validate(cff_valid)
-#> == Validating cff ===============================================================================================
+#> == Validating cff ==============================================================
 #> v Congratulations! This <cff> is valid
 }\if{html}{\out{</div>}}
 }

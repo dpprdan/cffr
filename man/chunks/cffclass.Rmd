@@ -1,8 +1,6 @@
-## The `cff` class
-
 [**cffr**](https://cran.r-project.org/package=cffr) implements an S3 object with
-[`class`] `cff`, which is used to represent the information of a
-`CITATION.cff` file in **R**.
+[`class`] `cff`, which is used to represent the information of a `CITATION.cff`
+file in **R**.
 
 Under the hood, a `cff` object is simply a named [`list`] to which we added
 additional methods, most notably [`print`] and [as_cff()].
@@ -28,8 +26,8 @@ a_cff_object
 is.list(a_cff_object)
 ```
 
-[as_cff()] not only converts a `list` to `cff` but also removes items (known
-as `keys` in CFF terminology) that are `NULL` or `NA`.
+[as_cff()] not only converts a `list` to `cff` but also removes items (known as
+`keys` in CFF terminology) that are `NULL` or `NA`.
 
 ### Sub-classes
 

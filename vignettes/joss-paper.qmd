@@ -23,6 +23,7 @@ citation:
   doi: 10.21105/joss.03900
   url: https://doi.org/10.21105/joss.03900
 date: 2021-11-08
+doi: 10.21105/joss.03900
 bibliography: REFERENCES.bib
 link-citations: true
 vignette: >
