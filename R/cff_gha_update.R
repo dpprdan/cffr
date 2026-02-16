@@ -42,13 +42,13 @@ cff_gha_update <- function(path = ".", overwrite = FALSE) {
     dir.create(destdir, recursive = TRUE, showWarnings = FALSE)
   }
 
-  newfile <- file.path(destdir, "update-citation-cff.yaml")
+  newfile <- file.path(destdir, "update-citation-cff.yml")
 
   if (!file_exist_abort(newfile) || isTRUE(overwrite)) {
     cli::cli_alert_success("Installing {.file {newfile}}")
 
     file.copy(
-      system.file("yaml/update-citation-cff.yaml", package = "cffr"),
+      system.file("yaml/update-citation-cff.yml", package = "cffr"),
       newfile,
       overwrite = TRUE
     )

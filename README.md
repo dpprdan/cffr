@@ -64,8 +64,8 @@ organizations. One of the many uses of a `codemeta.json` file (created
 following the standards defined by The CodeMeta Project) is to provide
 citation metadata such as title, authors, publication year, and venue
 ([Fenner 2021](#ref-fenner2021)). The packages **codemeta** ([Boettiger
-and Salmon 2021a](#ref-codemeta)) and **codemetar** ([Boettiger and
-Salmon 2021b](#ref-codemetar2021)) allow for generating `codemeta.json`
+and Salmon 2021](#ref-codemeta)) and **codemetar** ([Boettiger and
+Salmon 2026](#ref-codemetar2021)) allow for generating `codemeta.json`
 files from R package metadata.
 
 ## The cffr package
@@ -774,14 +774,14 @@ Check the following articles to learn more about **cffr**:
 
 ## Related packages
 
-- **citation** ([Dietrich and Leoncio 2022](#ref-citation22)) includes a
+- **citation** ([Dietrich and Leoncio 2025](#ref-citation22)) includes a
   function `r2cff` that creates a `CITATION.cff` file (v1.1.0) using the
   information of your `DESCRIPTION` file. It also provide minimal
   validity checks.
-- **handlr** ([Chamberlain and Wiernik 2026](#ref-handlr)): Tool for
+- **handlr** ([Chamberlain and Wiernik 2025](#ref-handlr)): Tool for
   converting among citation formats, including `*.cff` files.
-- **codemeta** ([Boettiger and Salmon 2021a](#ref-codemeta)) /
-  **codemetar** ([Boettiger and Salmon 2021b](#ref-codemetar2021))
+- **codemeta** ([Boettiger and Salmon 2021](#ref-codemeta)) /
+  **codemetar** ([Boettiger and Salmon 2026](#ref-codemetar2021))
   provides similar solutions for creating `codemeta.json` file, another
   format for storing and sharing software metadata.
 
@@ -828,23 +828,24 @@ entry-spacing="0">
 
 <div id="ref-codemeta" class="csl-entry">
 
-Boettiger, Carl, and Maëlle Salmon. 2021a.
+Boettiger, Carl, and Maëlle Salmon. 2021.
 *<span class="nocase">codemeta</span>: A Smaller
 <span class="nocase">codemetar</span> Package*.
-<https://CRAN.R-project.org/package=codemeta>.
+<https://doi.org/10.32614/CRAN.package.codemeta>.
 
 </div>
 
 <div id="ref-codemetar2021" class="csl-entry">
 
-———. 2021b. *<span class="nocase">codemetar</span>: Generate ’CodeMeta’
+———. 2026. *<span class="nocase">codemetar</span>: Generate ’CodeMeta’
 Metadata for R Packages*.
+<https://doi.org/10.32614/CRAN.package.codemetar>.
 
 </div>
 
 <div id="ref-handlr" class="csl-entry">
 
-Chamberlain, Scott, and Brenton M. Wiernik. 2026.
+Chamberlain, Scott, and Brenton M. Wiernik. 2025.
 *<span class="nocase">handlr</span>: Convert Among Citation Formats*.
 <https://doi.org/10.32614/CRAN.package.handlr>.
 
@@ -852,7 +853,7 @@ Chamberlain, Scott, and Brenton M. Wiernik. 2026.
 
 <div id="ref-citation22" class="csl-entry">
 
-Dietrich, Jan Philipp, and Waldir Leoncio. 2022.
+Dietrich, Jan Philipp, and Waldir Leoncio. 2025.
 *<span class="nocase">citation</span>: Software Citation Tools*.
 <https://doi.org/10.32614/CRAN.package.citation>.
 
