@@ -24,8 +24,7 @@ knitr:
 [![CRAN-status](https://www.r-pkg.org/badges/version/cffr)](https://CRAN.R-project.org/package=cffr)
 [![CRAN-results](https://badges.cranchecks.info/worst/cffr.svg)](https://cran.r-project.org/web/checks/check_results_cffr.html)
 [![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/cffr?color=blue)](https://cran.r-project.org/package=cffr)
-[![R-CMD-check](https://github.com/ropensci/cffr/actions/workflows/check-full.yaml/badge.svg)](https://github.com/ropensci/cffr/actions/workflows/check-full.yaml)
-[![R-hub](https://github.com/ropensci/cffr/actions/workflows/rhub.yaml/badge.svg)](https://github.com/ropensci/cffr/actions/workflows/rhub.yaml)
+[![R-CMD-check](https://github.com/ropensci/cffr/actions/workflows/check-full.yml/badge.svg)](https://github.com/ropensci/cffr/actions/workflows/check-full.yml)
 [![codecov](https://codecov.io/gh/ropensci/cffr/branch/main/graph/badge.svg?token=YRO3XL8RWK)](https://app.codecov.io/gh/ropensci/cffr)
 [![r-universe](https://ropensci.r-universe.dev/badges/cffr)](https://ropensci.r-universe.dev/cffr)
 [![CITATION-cff](https://github.com/ropensci/cffr/actions/workflows/cff-validator.yml/badge.svg)](https://github.com/ropensci/cffr/actions/workflows/cff-validator.yml)
@@ -243,12 +242,12 @@ update your `CITATION.cff` file on the following events:
 #| eval: false
 cff_gha_update()
 
-#> ✔ Installing ./.github/workflows/update-citation-cff.yaml
+#> ✔ Installing ./.github/workflows/update-citation-cff.yml
 #> ℹ Adding ".github" to .Rbuildignore
 ```
 
 See the example workflow file
-[here](https://github.com/ropensci/cffr/blob/main/.github/workflows/update-citation-cff.yaml).
+[here](https://github.com/ropensci/cffr/blob/main/.github/workflows/update-citation-cff.yml).
 
 #### Git pre-commit hook [![Experimental](https://lifecycle.r-lib.org/articles/figures/lifecycle-experimental.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
