@@ -29,7 +29,6 @@ jobs:
           local::.
           any::rcmdcheck
           dieghernan/pkgdev
-        needs: website
 
     - name: Install optipng
       run: |
