@@ -93,7 +93,7 @@ test_that("Test in mock package", {
   expect_true(file_exist_abort(file.path(
     ".github",
     "workflows",
-    "update-citation-cff.yml"
+    "update-citation-cff.yaml"
   )))
 
   cffobj <- cff_create()
