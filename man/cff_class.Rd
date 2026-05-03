@@ -124,7 +124,7 @@ ref_list
 #>   authors:
 #>   - name: R Core Team
 #>   institution:
-#>     name: 'R Foundation for Statistical Computing (ROR: <https://ror.org/05qewa988>)'
+#>     name: R Foundation for Statistical Computing
 #>     address: Vienna, Austria
 #>   year: '2026'
 #>   doi: 10.32614/R.manuals
@@ -138,7 +138,8 @@ ref_list
 #>     given-names: Kirill
 #>   year: '2025'
 #>   notes: R package version 2.3.12
-#>   url: https://yaml.r-lib.org
+#>   url: https://CRAN.R-project.org/package=yaml
+#>   doi: 10.32614/CRAN.package.yaml
 
 class(ref_list)
 #> [1] "cff_ref_lst" "cff"
@@ -151,7 +152,7 @@ ref_list[[1]]
 #> authors:
 #> - name: R Core Team
 #> institution:
-#>   name: 'R Foundation for Statistical Computing (ROR: <https://ror.org/05qewa988>)'
+#>   name: R Foundation for Statistical Computing
 #>   address: Vienna, Austria
 #> year: '2026'
 #> doi: 10.32614/R.manuals
@@ -312,7 +313,8 @@ toBibtex(cit)
 #>   author = \{Jeremy Stephens and Kirill Simonov\},
 #>   year = \{2025\},
 #>   note = \{R package version 2.3.12\},
-#>   url = \{https://yaml.r-lib.org\},
+#>   url = \{https://CRAN.R-project.org/package=yaml\},
+#>   doi = \{10.32614/CRAN.package.yaml\},
 #> \}
 
 # cff_pers, cff_pers_lst

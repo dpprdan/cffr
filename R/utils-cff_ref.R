@@ -155,18 +155,31 @@ get_bibtex_inst <- function(field_list) {
   )
 
   if (to_replace == "institution") {
+    if (inherits(field_list$institution, "person")) {
+      field_list$institution <- format(
+        field_list$institution,
+        include = c("given", "family")
+      )
+    }
     return(field_list)
   }
 
   # Rest of cases remove bibtex institution and rename
   nms <- names(field_list)
-
   field_list <- field_list["institution" != nms]
 
   # Rename
   nms2 <- names(field_list)
   nms2[nms2 == to_replace] <- "institution"
   names(field_list) <- nms2
+
+  # Handle institution as class person: this removes ROR from name
+  if (inherits(field_list$institution, "person")) {
+    field_list$institution <- format(
+      field_list$institution,
+      include = c("given", "family")
+    )
+  }
 
   field_list
 }

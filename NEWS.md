@@ -1,5 +1,7 @@
 # cffr (development version)
 
+- `institution.name` does not show ROR information.
+
 # cffr 1.3.0
 
 - Minimum **R** version required now is **4.1.0**.
@@ -67,8 +69,8 @@ and
 objects:
 
 - A list of `definitions.reference` objects (e.g. `references`) has class
-  `cff_ref_lst, cff`, and individual elements (e.g. `preferred-citation` or
-  each member of `references`) have class `cff_ref, cff`.
+  `cff_ref_lst, cff`, and individual elements (e.g. `preferred-citation` or each
+  member of `references`) have class `cff_ref, cff`.
 - A list of `definitions.person` or `definitions.entity` objects (e.g.
   `authors`, `contact`) has class `cff_pers_lst, cff`, and individual elements
   (e.g. `publisher` or each member of `authors`) have class `cff_pers, cff`.
