@@ -572,8 +572,10 @@
       title: 'R: A Language and Environment for Statistical Computing'
       authors:
       - name: R Core Team
+        website: https://ror.org/02zz1nj61
       institution:
         name: R Foundation for Statistical Computing
+        website: https://ror.org/05qewa988
         address: Vienna, Austria
       year: '2026'
       doi: 10.32614/R.manuals
@@ -595,8 +597,10 @@
         title: 'R: A Language and Environment for Statistical Computing'
         authors:
         - name: R Core Team
+          website: https://ror.org/02zz1nj61
         institution:
           name: R Foundation for Statistical Computing
+          website: https://ror.org/05qewa988
           address: Vienna, Austria
         year: '2026'
         doi: 10.32614/R.manuals

@@ -15,7 +15,8 @@ get_bibtex_entry <- function(bib) {
 
   # Manage type from BibTeX and convert to CFF
   # This overwrite the BibTeX type field. Not treated by this function
-  cit_list$type <- switch(init_type,
+  cit_list$type <- switch(
+    init_type,
     "article" = "article",
     "book" = "book",
     "booklet" = "pamphlet",
@@ -144,7 +145,8 @@ get_bibtex_fields <- function(cit_list) {
 get_bibtex_inst <- function(field_list) {
   # Initial values
   bibtex_entry <- field_list$bibtex_entry
-  to_replace <- switch(bibtex_entry,
+  to_replace <- switch(
+    bibtex_entry,
     "mastersthesis" = "school",
     "phdthesis" = "school",
     "conference" = "organization",
@@ -155,12 +157,6 @@ get_bibtex_inst <- function(field_list) {
   )
 
   if (to_replace == "institution") {
-    if (inherits(field_list$institution, "person")) {
-      field_list$institution <- format(
-        field_list$institution,
-        include = c("given", "family")
-      )
-    }
     return(field_list)
   }
 
@@ -172,14 +168,6 @@ get_bibtex_inst <- function(field_list) {
   nms2 <- names(field_list)
   nms2[nms2 == to_replace] <- "institution"
   names(field_list) <- nms2
-
-  # Handle institution as class person: this removes ROR from name
-  if (inherits(field_list$institution, "person")) {
-    field_list$institution <- format(
-      field_list$institution,
-      include = c("given", "family")
-    )
-  }
 
   field_list
 }
@@ -201,7 +189,8 @@ add_thesis <- function(cit_list) {
     return(cit_list)
   }
 
-  cit_list$`thesis-type` <- switch(bibtex_entry,
+  cit_list$`thesis-type` <- switch(
+    bibtex_entry,
     phdthesis = "PhD Thesis",
     "Master's Thesis"
   )
@@ -389,16 +378,6 @@ get_bibtex_url <- function(cit_list) {
 get_bibtex_other_pers <- function(field_list) {
   others <- drop_null(field_list[other_persons()])
 
-  # If any is person type (example, editors) then paste and collapse
-
-  others <- lapply(others, function(x) {
-    if (inherits(x, "person")) {
-      x <- paste(x, collapse = " and ")
-    } else {
-      x
-    }
-  })
-
   # Select subsets
   all_pers <- other_persons()
   toent <- other_persons_entity()
@@ -407,22 +386,54 @@ get_bibtex_other_pers <- function(field_list) {
   toauto_end <- all_pers[!all_pers %in% c(toent, toent_pers)]
   toent_end <- toent[!toent %in% toent_pers]
 
-  # Entity
-  toentity <- others[names(others) %in% toent_end]
-  toentity <- lapply(toentity, function(x) {
-    list(name = clean_str(x))
-  })
-
   # As persons or entities using bibtex
   toentity_pers <- others[names(others) %in% toent_pers]
   toentity_pers <- lapply(toentity_pers, function(x) {
+    if (inherits(x, "person")) {
+      x <- format(
+        x,
+        include = c("given", "family")
+      )
+    }
+
     bibtex <- paste(x, collapse = " and ")
     end <- as_cff_person(bibtex)
 
     end
   })
 
-  toperson <- others[names(others) %in% toauto_end]
+  # Rest
+
+  rest <- others[!names(others) %in% toent_pers]
+
+  # If any has several persons then paste and collapse
+  rest <- lapply(others, function(x) {
+    if (length(x) > 1) {
+      and <- paste(
+        format(
+          x,
+          include = c("given", "family")
+        ),
+        collapse = " and "
+      )
+      return(and)
+    } else if (inherits(x, "person")) {
+      return(as_cff(x))
+    } else {
+      x
+    }
+  })
+
+  # Entity
+  toentity <- rest[names(rest) %in% toent_end]
+  toentity <- lapply(toentity, function(x) {
+    if (inherits(x, "cff")) {
+      return(unclass(unlist(x, recursive = FALSE)))
+    }
+    list(name = clean_str(x))
+  })
+
+  toperson <- rest[names(rest) %in% toauto_end]
   toperson <- lapply(toperson, as_cff_person)
 
   # Bind and reorder

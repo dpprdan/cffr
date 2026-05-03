@@ -1,6 +1,7 @@
 # cffr (development version)
 
-- `institution.name` does not show ROR information.
+- In `definitions.person` and `definitions.entity`, the key `website` uses
+  [ROR](https://ror.org/) as a fallback.
 
 # cffr 1.3.0
 

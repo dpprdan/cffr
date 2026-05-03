@@ -250,7 +250,8 @@ validate_cff_person_fields <- function(person_cff) {
   is_entity <- as.character("name" %in% names(person_cff))
 
   # Keep only valid tags - Would depend on entity or person
-  definition <- switch(is_entity,
+  definition <- switch(
+    is_entity,
     "TRUE" = cff_schema_definitions_entity(),
     cff_schema_definitions_person()
   )
@@ -437,6 +438,12 @@ extract_person_comments45 <- function(person) {
 
   if (!is.null(web)) {
     comm_cff$website <- clean_str(web[is_url(web)])
+  }
+
+  # Fallback: ROR if website not present
+  ror <- comm_cff$ror
+  if (all(!is.null(ror), is.null(comm_cff$website))) {
+    comm_cff$website <- clean_str(ror[is_url(ror)])
   }
 
   # Add also email
