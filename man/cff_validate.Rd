@@ -42,7 +42,10 @@ res <- try(cff_validate(err_f))
 isTRUE(res)
 isFALSE(res)
 
-attr(res, "errors")
+# Detailed results
+df_errors <- attr(res, "errors")
+
+df_errors[, c("field", "message")]
 
 # If a CITATION file is supplied (note that it is not a .cff file), it
 # throws an error
