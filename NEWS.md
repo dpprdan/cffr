@@ -1,4 +1,4 @@
-# cffr (development version)
+# cffr 1.4.0
 
 - `cff_validate()`: migrated to the [ajv](https://github.com/ajv-validator/ajv)
   validation engine via `jsonvalidate::json_validate()`. Error messages are now
