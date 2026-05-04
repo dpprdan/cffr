@@ -6,17 +6,14 @@
 #' @noRd
 clean_str <- function(str) {
   # Collapse to a single string.
-  str <- paste(str, collapse = " ")
-  str <- unlist(str)
-  if (is.null(str) || is.na(str)) {
-    return(NULL)
-  }
+  str <- unlist(paste(str, collapse = " "))
 
   clean <- gsub("[\n\r]", " ", str)
   clean <- gsub("\\s+", " ", clean)
   clean <- gsub("\\{", "", clean)
   clean <- gsub("\\}", "", clean)
   clean <- gsub("^NA$", "", clean)
+  clean <- gsub("\\s{2,}", " ", clean)
   clean <- trimws(clean)
   # Collapse to single char
   clean <- paste(clean, collapse = " ")

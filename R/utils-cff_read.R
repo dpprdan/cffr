@@ -82,7 +82,7 @@ get_desc_date_released <- function(pkg) {
   date <- tryCatch(
     as.character(as.Date(clean_dates, format = "%Y-%m-%d")),
     error = function(cond) {
-      NULL
+      NULL # nocov
     }
   )
 

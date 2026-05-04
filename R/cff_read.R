@@ -143,7 +143,17 @@ cff_read <- function(path, ...) {
 cff_read_cff_citation <- function(path, ...) {
   file_exist_abort(path, abort = TRUE)
 
-  cffobj <- yaml::read_yaml(path, ...)
+  cffobj <- yaml::read_yaml(
+    path,
+    ...,
+    # Read languages always as list (#105)
+    handlers = list(map = function(x) {
+      if (length(x$languages) == 1) {
+        x$languages <- list(x$languages)
+      }
+      x
+    })
+  )
   new_cff(cffobj)
 }
 

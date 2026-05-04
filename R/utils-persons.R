@@ -1,7 +1,4 @@
 bibtex_pers_von_last_first_jr <- function(x) {
-  # For corner case: quint
-  x <- gsub("\\s{2,}", " ", x)
-
   # Protect commas on brackets to avoid error on splitting
   protected <- gsub(",(?![^\\}]*(\\{|$))", "@comma@", x, perl = TRUE)
 
@@ -85,9 +82,6 @@ bibtex_pers_von_last_first_jr <- function(x) {
 }
 
 bibtex_pers_von_last_first <- function(x) {
-  # For corner case: quint
-  x <- gsub("\\s{2,}", " ", x)
-
   # Protect commas on brackets to avoid error on splitting
   protected <- gsub(",(?![^\\}]*(\\{|$))", "@comma@", x, perl = TRUE)
 
@@ -177,9 +171,6 @@ bibtex_pers_first_von_last <- function(x) {
   # Jean De La Fontaine     -> "Jean De La"   ""            "Fontaine"
   # jean De la Fontaine     -> ""             "jean De la"  "Fontaine"
   # Jean de La Fontaine     -> "Jean"         "de"          "La Fontaine"
-
-  # For corner case: quint
-  x <- gsub("\\s{2,}", " ", x)
 
   # Protect spaces between braces before splitting
   x <- gsub("\\s(?![^\\}]*(\\{|$))", "@blank@", x, perl = TRUE)

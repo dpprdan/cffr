@@ -323,6 +323,9 @@ create_person_from_txt <- function(as_bib_text) {
     comm_cff <- list()
   }
 
+  # Clean several spaces (issue with quint package)
+  person_only <- gsub("\\s{2,}", " ", person_only)
+
   # Special case for Bioconductor
   if (is_substring(tolower(person_only), "bioconductor")) {
     person_only <- protect_bib_braces(person_only)
