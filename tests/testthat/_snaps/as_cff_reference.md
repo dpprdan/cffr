@@ -606,3 +606,71 @@
         doi: 10.32614/R.manuals
         url: https://www.R-project.org/
 
+# Language round-trip
+
+    Code
+      toBibtex(aa)
+    Output
+      @Article{miller_etall:2020,
+        title = {GPP, the Generic Preprocessor},
+        author = {Tristan Miller and Denis Auroux},
+        year = {2020},
+        month = {jul},
+        journal = {Journal of Open Source Software},
+        doi = {10.21105/joss.02400},
+        issn = {2475-9066},
+        language = {en},
+      }
+      
+      @Misc{druskat:2021,
+        title = {Single language},
+        author = {Stephan Druskat},
+        year = {2021},
+        language = {en},
+      }
+      
+      @Misc{druskat:2021,
+        title = {Three languages},
+        author = {Stephan Druskat},
+        year = {2021},
+        language = {en},
+      }
+
+---
+
+    Code
+      back
+    Output
+      - type: article
+        title: GPP, the Generic Preprocessor
+        authors:
+        - family-names: Miller
+          given-names: Tristan
+          orcid: https://orcid.org/0000-0002-0749-1100
+        - family-names: Auroux
+          given-names: Denis
+          orcid: https://orcid.org/0009-0006-4607-2546
+        year: '2020'
+        month: '7'
+        journal: Journal of Open Source Software
+        doi: 10.21105/joss.02400
+        issn: 2475-9066
+        languages:
+        - en
+      - type: generic
+        title: Single language
+        authors:
+        - family-names: Druskat
+          given-names: Stephan
+        year: '2021'
+        languages:
+        - en
+      - type: generic
+        title: Three languages
+        authors:
+        - family-names: Druskat
+          given-names: Stephan
+        year: '2021'
+        languages:
+        - en
+

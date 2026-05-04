@@ -100,6 +100,15 @@ make_cff_reference <- function(bib) {
   ## Handle location ----
   cit_list <- add_address(cit_list)
 
+  ## Language
+  # Languages: handle single value - BibLateX
+  if ("languages" %in% names(cit_list)) {
+    cit_list$languages <- list(unlist(
+      cit_list$languages,
+      use.names = FALSE
+    )[1])
+  }
+
   # Last step----
 
   # Initial order but starting with type, title, authors

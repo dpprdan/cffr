@@ -347,6 +347,9 @@ as_bibentry.cff_ref <- function(x, ...) {
   tobibentry$urldate <- x$`date-accessed`
   tobibentry$version <- x$version
 
+  # Only the first one is extracted
+  tobibentry$language <- unlist(x$languages, use.names = FALSE)[1]
+
   # BibTeX entry----
 
   tobibentry$bibtype <- guess_bibtype(x)

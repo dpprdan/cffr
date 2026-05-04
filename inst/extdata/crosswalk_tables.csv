@@ -76,6 +76,7 @@
 "fields_biblatex2cff","**issn**","`issn`",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "fields_biblatex2cff","**issuetitle**","`issue-title`",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "fields_biblatex2cff","**keywords**","`keywords`",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"fields_biblatex2cff","**language**","`languages` (first item only)",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "fields_biblatex2cff","**pagetotal**","`pages`",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "fields_biblatex2cff","**translator**","`translators`",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
 "fields_biblatex2cff","**url**","`url`",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

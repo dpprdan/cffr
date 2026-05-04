@@ -123,8 +123,10 @@ ref_list
 #>   title: 'R: A Language and Environment for Statistical Computing'
 #>   authors:
 #>   - name: R Core Team
+#>     website: https://ror.org/02zz1nj61
 #>   institution:
 #>     name: R Foundation for Statistical Computing
+#>     website: https://ror.org/05qewa988
 #>     address: Vienna, Austria
 #>   year: '2026'
 #>   doi: 10.32614/R.manuals
@@ -151,8 +153,10 @@ ref_list[[1]]
 #> title: 'R: A Language and Environment for Statistical Computing'
 #> authors:
 #> - name: R Core Team
+#>   website: https://ror.org/02zz1nj61
 #> institution:
 #>   name: R Foundation for Statistical Computing
+#>   website: https://ror.org/05qewa988
 #>   address: Vienna, Austria
 #> year: '2026'
 #> doi: 10.32614/R.manuals
@@ -173,10 +177,16 @@ Creating a \code{cff} object does not ensure its validity according to the \href
 cff_validate(a_cff_object)
 #> == Validating cff ==============================================================
 #> x Oops! This <cff> has the following errors:
-#> * cff.authors: is required
-#> * cff["cff-version"]: is required
-#> * cff.message: is required
-#> * cff.title: is required
+#> * cff/: must have required property 'authors'
+#> * cff/: must have required property 'cff-version'
+#> * cff/: must have required property 'message'
+#> * cff/: must have required property 'title'
+#> * cff/: must NOT have additional properties
+#> * cff/: must NOT have additional properties
+#> * cff/: must NOT have additional properties
+#> * cff/: must NOT have additional properties
+#> * cff/: must NOT have additional properties
+#> * cff/: must NOT have additional properties
 }\if{html}{\out{</div>}}
 
 \code{\link[=cff_validate]{cff_validate()}} gives minimal messages about what's wrong with our \code{cff} and

@@ -1,7 +1,16 @@
 # cffr (development version)
 
-- In `definitions.person` and `definitions.entity`, the key `website` uses
-  [ROR](https://ror.org/) as a fallback.
+- `cff_validate()`: migrated to the [ajv](https://github.com/ajv-validator/ajv)
+  validation engine via `jsonvalidate::json_validate()`. Error messages are now
+  more informative.
+- In `definitions.person` and `definitions.entity`, the `website` field uses ROR
+  as a fallback.
+- `doi`: DOIs in `inst/CITATION` `url` fields are detected, including those
+  matching the pattern `.*dx.doi.org/`.
+- Improvements to `languages` parsing:
+  - `cff_read()` correctly handles a single `languages` value (#105).
+  - `as_bibentry()` / `toBibtex.cff()` recognize the `languages` field, only the
+    first value is mapped to BibTeX.
 
 # cffr 1.3.0
 
@@ -21,7 +30,7 @@
 
 - New argument `r_citation` in `cff_write()`. When it is set to `TRUE`, an **R**
   citation file (`inst/CITATION`) is generated or updated with the information
-  from the generated `CITATION.cff` file. **No backup copy is created**; for
+  from the generated `CITATION.cff` file. **No backup copy is created**, for
   more control use `cff_write_citation()` (#79).
 - `repository-code` now also recognizes [Codeberg](https://codeberg.org/) as a
   valid repository (#88).
@@ -36,12 +45,12 @@
 
 - **cffr** now automatically adds DOIs to packages on **CRAN** (e.g.
   <https://doi.org/10.32614/CRAN.package.cffr>):
-  - If the package has a `CITATION` file providing a doi, the `CITATION` doi is
-    used as the main `CITATION.cff` `doi` and the **CRAN** doi is added as an
+  - If the package has a `CITATION` file providing a DOI, the `CITATION` DOI is
+    used as the main `CITATION.cff` `doi` and the **CRAN** DOI is added as an
     `identifier`.
-  - Otherwise, the **CRAN** doi is used as `doi`.
+  - Otherwise, the **CRAN** DOI is used as `doi`.
   - When extracting dependencies (e.g. `cff_create(dependencies = TRUE)`) and
-    the package dependency is on **CRAN**, the **CRAN** doi is used for the
+    the package dependency is on **CRAN**, the **CRAN** DOI is used for the
     dependency in the `references` key.
 - Extract `commit` from `RemoteSha`.
 - Update `cran_to_spdx` dataset.

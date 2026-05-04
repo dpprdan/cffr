@@ -167,7 +167,7 @@ references:
     given-names: Evgeny
   year: '2026'
   doi: 10.32614/CRAN.package.jsonvalidate
-  version: '>= 1.1.0'
+  version: '>= 1.5.0'
 - type: software
   title: tools
   abstract: 'R: A Language and Environment for Statistical Computing'

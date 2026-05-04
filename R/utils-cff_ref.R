@@ -15,8 +15,7 @@ get_bibtex_entry <- function(bib) {
 
   # Manage type from BibTeX and convert to CFF
   # This overwrite the BibTeX type field. Not treated by this function
-  cit_list$type <- switch(
-    init_type,
+  cit_list$type <- switch(init_type,
     "article" = "article",
     "book" = "book",
     "booklet" = "pamphlet",
@@ -83,6 +82,7 @@ get_bibtex_fields <- function(cit_list) {
   nm[nm == "translator"] <- "translators"
   nm[nm == "urldate"] <- "date-accessed"
   nm[nm == "pagetotal"] <- "pages"
+  nm[nm == "language"] <- "languages"
 
   # Other BibLaTeX fields that does not require any mapping
   # abstract, doi, isbn, issn, url, version
@@ -145,8 +145,7 @@ get_bibtex_fields <- function(cit_list) {
 get_bibtex_inst <- function(field_list) {
   # Initial values
   bibtex_entry <- field_list$bibtex_entry
-  to_replace <- switch(
-    bibtex_entry,
+  to_replace <- switch(bibtex_entry,
     "mastersthesis" = "school",
     "phdthesis" = "school",
     "conference" = "organization",
@@ -189,8 +188,7 @@ add_thesis <- function(cit_list) {
     return(cit_list)
   }
 
-  cit_list$`thesis-type` <- switch(
-    bibtex_entry,
+  cit_list$`thesis-type` <- switch(bibtex_entry,
     phdthesis = "PhD Thesis",
     "Master's Thesis"
   )
@@ -282,8 +280,14 @@ fallback_dates <- function(cit_list) {
 get_bibtex_doi <- function(cit_list) {
   dois <- unlist(cit_list[names(cit_list) == "doi"])
 
+  # Check urls as well
+  url_for_doi <- unlist(cit_list$url)
+  if (all(!is.null(url_for_doi), grepl("doi.org", url_for_doi))) {
+    dois <- c(dois, url_for_doi)
+  }
+
   dois <- unlist(lapply(dois, function(x) {
-    x <- gsub("^https://doi.org/", "", x)
+    x <- gsub("^.*doi.org/", "", x)
     x <- clean_str(x)
   }))
 
@@ -416,9 +420,9 @@ get_bibtex_other_pers <- function(field_list) {
         ),
         collapse = " and "
       )
-      return(and)
+      and
     } else if (inherits(x, "person")) {
-      return(as_cff(x))
+      as_cff(x)
     } else {
       x
     }

@@ -756,6 +756,9 @@ test_that("Identifiers and dois", {
 })
 
 test_that("Test R 2026", {
+  rvers <- getRversion()
+  skip_if(!grepl("^4.6", rvers), "Snapshot created with R 4.6.*")
+
   # https://github.com/wch/r-source/blob/trunk/src/library/base/inst/CITATION
 
   bib <- bibentry(
@@ -767,18 +770,9 @@ test_that("Test R 2026", {
       comment = c(ROR = "05qewa988")
     ),
     address = "Vienna, Austria",
-    year = version$year,
+    year = 2026,
     doi = "10.32614/R.manuals",
-    url = "https://www.R-project.org/",
-    mheader = "To cite R in publications use:",
-    mfooter = paste(
-      "We have invested a lot of time and effort in creating R,",
-      "please cite it when using it for data analysis.",
-      "See also",
-      sQuote("citation(\"pkgname\")"),
-      "for citing R packages.",
-      sep = " "
-    )
+    url = "https://www.R-project.org/"
   )
 
   bib_cff <- as_cff(bib)
@@ -789,4 +783,21 @@ test_that("Test R 2026", {
 
   expect_snapshot(cffobj)
   expect_true(cff_validate(cffobj, verbose = FALSE))
+})
+
+test_that("Language round-trip", {
+  lang_file <- system.file("examples/CITATION_lang.cff", package = "cffr")
+
+  cff_lang <- cff_read(lang_file)
+  expect_true(cff_validate(cff_lang, verbose = FALSE))
+
+  aa <- as_bibentry(cff_lang, what = "all")
+
+  expect_snapshot(
+    toBibtex(aa)
+  )
+
+  back <- as_cff(aa)
+
+  expect_snapshot(back)
 })

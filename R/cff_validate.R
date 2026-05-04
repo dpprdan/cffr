@@ -91,7 +91,14 @@ cff_validate <- function(x = "CITATION.cff", verbose = TRUE) {
 
   if (!result) {
     get_errors <- attr(result, "errors")
-    get_errors$field <- gsub("^data", "cff", get_errors$field)
+    field <- get_errors$instancePath
+    field[field == ""] <- "/"
+    field <- paste0("cff", field)
+    get_errors$field <- field
+    msg <- get_errors$message
+    # Escape braces
+    msg <- gsub("{", "{{", msg, fixed = TRUE)
+    msg <- gsub("}", "}}", msg, fixed = TRUE)
 
     if (verbose) {
       cli::cat_rule("Validating cff", col = "cyan", line = 2)
@@ -99,7 +106,7 @@ cff_validate <- function(x = "CITATION.cff", verbose = TRUE) {
         "* {.dt {.strong ",
         get_errors$field,
         "}}{.dl ",
-        get_errors$message,
+        msg,
         "}\n",
         collapse = ""
       )
@@ -109,7 +116,11 @@ cff_validate <- function(x = "CITATION.cff", verbose = TRUE) {
     }
 
     # Prepare output
-    attr(result, "errors") <- get_errors
+    attr(result, "errors") <- get_errors[, unique(c(
+      "field",
+      "message",
+      names(get_errors)
+    ))]
     return(invisible(result))
   }
 
@@ -126,7 +137,12 @@ cff_validate <- function(x = "CITATION.cff", verbose = TRUE) {
 #' @noRd
 validate_schema <- function(cit_temp, schema_temp) {
   x <- suppressMessages(
-    jsonvalidate::json_validate(cit_temp, schema_temp, verbose = TRUE)
+    jsonvalidate::json_validate(
+      cit_temp,
+      schema_temp,
+      verbose = TRUE,
+      engine = "ajv"
+    )
   )
 
   x

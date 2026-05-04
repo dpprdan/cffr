@@ -1,4 +1,7 @@
 bibtex_pers_von_last_first_jr <- function(x) {
+  # For corner case: quint
+  x <- gsub("\\s{2,}", " ", x)
+
   # Protect commas on brackets to avoid error on splitting
   protected <- gsub(",(?![^\\}]*(\\{|$))", "@comma@", x, perl = TRUE)
 
@@ -82,6 +85,9 @@ bibtex_pers_von_last_first_jr <- function(x) {
 }
 
 bibtex_pers_von_last_first <- function(x) {
+  # For corner case: quint
+  x <- gsub("\\s{2,}", " ", x)
+
   # Protect commas on brackets to avoid error on splitting
   protected <- gsub(",(?![^\\}]*(\\{|$))", "@comma@", x, perl = TRUE)
 
@@ -172,6 +178,9 @@ bibtex_pers_first_von_last <- function(x) {
   # jean De la Fontaine     -> ""             "jean De la"  "Fontaine"
   # Jean de La Fontaine     -> "Jean"         "de"          "La Fontaine"
 
+  # For corner case: quint
+  x <- gsub("\\s{2,}", " ", x)
+
   # Protect spaces between braces before splitting
   x <- gsub("\\s(?![^\\}]*(\\{|$))", "@blank@", x, perl = TRUE)
 
@@ -250,8 +259,7 @@ validate_cff_person_fields <- function(person_cff) {
   is_entity <- as.character("name" %in% names(person_cff))
 
   # Keep only valid tags - Would depend on entity or person
-  definition <- switch(
-    is_entity,
+  definition <- switch(is_entity,
     "TRUE" = cff_schema_definitions_entity(),
     cff_schema_definitions_person()
   )

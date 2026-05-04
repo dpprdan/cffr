@@ -78,7 +78,7 @@ and the `CITATION` file (if present) from your package. Note that
 **cffr** works best if your package passes
 `R CMD check/devtools::check()`.
 
-As per 2026-05-03 there are at least 564 repos on GitHub using **cffr**.
+As per 2026-05-04 there are at least 564 repos on GitHub using **cffr**.
 [Check them out
 here](https://github.com/search?q=cffr%20path%3A**%2FCITATION.cff&type=code).
 
@@ -228,8 +228,10 @@ test <- cff_create("knitr")
       url: https://www.R-project.org/
       authors:
       - name: R Core Team
+        website: https://ror.org/02zz1nj61
       institution:
         name: R Foundation for Statistical Computing
+        website: https://ror.org/05qewa988
         address: Vienna, Austria
       year: '2026'
       doi: 10.32614/R.manuals
@@ -273,8 +275,10 @@ test <- cff_create("knitr")
       notes: Imports
       authors:
       - name: R Core Team
+        website: https://ror.org/02zz1nj61
       institution:
         name: R Foundation for Statistical Computing
+        website: https://ror.org/05qewa988
         address: Vienna, Austria
       year: '2026'
       doi: 10.32614/R.manuals
@@ -284,8 +288,10 @@ test <- cff_create("knitr")
       notes: Imports
       authors:
       - name: R Core Team
+        website: https://ror.org/02zz1nj61
       institution:
         name: R Foundation for Statistical Computing
+        website: https://ror.org/05qewa988
         address: Vienna, Austria
       year: '2026'
       doi: 10.32614/R.manuals
