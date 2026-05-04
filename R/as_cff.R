@@ -34,7 +34,8 @@
 #'
 #' @details
 #' For `as_cff.bibentry()` and `as_cff.Bibtex()`, see
-#' `vignette("bibtex_cff", "cffr")` to understand how the mapping is performed.
+#' `vignette("bibtex-cff", package = "cffr")` to understand how the mapping is
+#' performed.
 #'
 #' [as_cff_person()] is preferred over `as_cff.person()`, since it can handle
 #' `character` inputs such as `"Davis, Jr., Sammy"`. For `person` objects both

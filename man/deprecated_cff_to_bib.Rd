@@ -32,7 +32,7 @@ info of the package (key \code{preferred-citation}).
 both the \code{preferred-citation} and the \code{references} key.
 }
 
-See \code{vignette("crosswalk", package = "cffr")}.}
+See \code{vignette("r-cff", package = "cffr")}.}
 }
 \value{
 See \code{\link[=as_bibentry]{as_bibentry()}}.

@@ -249,9 +249,6 @@ with one key playing a special role: `type`. In CFF, `type` explicitly
 identifies the kind of referenced work, making it conceptually analogous to a
 BibTeX [**entry**](#entries) type rather than a **field**[^1].
 
-[^1]: See a complete list of possible values of CFF `type` in [Appendix
-    B](#appendix_cff_type)
-
 ## Mapping strategy
 
 The mapping implemented in **cffr** follows a three‑step pipeline:
@@ -383,9 +380,6 @@ The **cffr** package provides utilities for mapping BibTeX entries (via
 `bibentry()`) to CFF and back. This section describes how the crosswalk is
 implemented, partially informed by @Haines_Ruby_CFF_Library_2021[^2].
 
-[^2]: Note that this software performs only the mapping from CFF to BibTeX,
-    however **cffr** can perform the mapping in both directions.
-
 The crosswalk is primarily defined for BibTeX to CFF conversion, reverse mapping
 is a best-effort approximation and may be lossy.
 
@@ -448,14 +442,8 @@ The previous mapping has the following specifications:
 - **\@mastersthesis** and **\@phdthesis** are tagged using a combination of
   `type: thesis` and `thesis-type` keys.
 
-[^3]: Note that BibLaTeX [@biblatexpack] handles **\@inbook** differently, see
-    [Appendix A](#appendix_inbook).
-
 Additionally, considering that CFF allows for a wide range of values[^4] for the
 key `type`, the following mapping is applied from CFF to BibTeX:
-
-[^4]: See [Appendix B](#appendix_cff_type) for all possible values. Information
-    extracted from @druskat2019.
 
 The reverse mapping prioritizes BibTeX compatibility and normalization over
 exact round-trip preservation.
@@ -534,8 +522,6 @@ We provide more detail on some of the mappings presented in the table above:
 Additionally, there are other CFF keys that correspond to BibLaTeX fields. We
 propose to include these fields in the crosswalk[^5], even though they are not
 part of the core BibTeX fields definition.
-
-[^5]: See @biblatexcheatsheet for a preview of the accepted BibLaTeX fields.
 
 ```{r}
 #| label: tbl-fields_biblatex2cff
@@ -1045,10 +1031,6 @@ prescribe an **author** field. In these cases, as `authors` is required in CFF,
 we use *anonymous*[^6] when mapping to CFF and omit it when mapping from CFF to
 BibTeX.
 
-[^6]: As proposed on [*How to deal with unknown individual
-    authors?*](https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#how-to-deal-with-unknown-individual-authors),
-    **(Guide to Citation File Format schema version 1.2.0)**
-
 ```{r}
 #| label: tbl-model_proceedings
 #| echo: false
@@ -1257,3 +1239,24 @@ knitr::kable(
   row.names = NA
 )
 ```
+
+## References
+
+[^1]: See a complete list of possible values of CFF `type` in [Appendix
+    B](#appendix_cff_type)
+
+[^2]: Note that this software performs only the mapping from CFF to BibTeX,
+    however **cffr** can perform the mapping in both directions.
+
+[^3]: Note that BibLaTeX [@biblatexpack] handles **\@inbook** differently, see
+    [Appendix A](#appendix_inbook).
+
+[^4]: See [Appendix B](#appendix_cff_type) for all possible values. Information
+    extracted from @druskat2019.
+
+[^5]: See @biblatexcheatsheet for a preview of the accepted BibLaTeX fields.
+
+[^6]: As proposed on [*How to deal with unknown individual
+    authors?*](https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md#how-to-deal-with-unknown-individual-authors),
+    **(Guide to Citation File Format schema version 1.2.0)**
+

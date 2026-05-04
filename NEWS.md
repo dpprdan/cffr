@@ -141,7 +141,7 @@ warns when used, providing advice on the replacement function.
 ## Other changes
 
 - Minimum **R** version required now is **4.0.0**.
-- Update of BibTeX crosswalk (see `vignette("bibtex_cff", package = "cffr")`)
+- Update of BibTeX crosswalk (see `vignette("bibtex-cff", package = "cffr")`)
   and consequently changes in the mapping performed by `as_bibtex()`
   `cff_parse_citation()`:
   - **\@inbook** and **\@book** gains a new value on [CFF]{.underline} when
@@ -257,7 +257,7 @@ warns when used, providing advice on the replacement function.
 - Rename `cff_schema_definitions_reference()` to
   `cff_schema_definitions_refs()`.
 - `repository` key is supported.
-- Added vignette: `vignette("crosswalk", package = "cffr")`.
+- Added vignette: `vignette("r-cff", package = "cffr")`.
 - Add support to Bioconductor packages.
 - New function: `cff_gha_update()`.
 

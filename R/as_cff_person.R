@@ -23,7 +23,7 @@
 #' the methods [as.person.cff_pers()] and [as.person.cff_pers_lst()].
 #'
 #' @seealso
-#' Examples in `vignette("cffr", "cffr")` and [utils::person()].
+#' Examples in `vignette("cffr", package = "cffr")` and [utils::person()].
 #'
 #' Learn more about the `cff_pers_lst` and `cff_pers` classes in [cff_class].
 #'

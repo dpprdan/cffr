@@ -158,7 +158,7 @@ toBibtex(as_cff_person("Herbert von Karajan"))
 See \strong{Examples} for more information.
 }
 \seealso{
-Examples in \code{vignette("cffr", "cffr")} and \code{\link[utils:person]{utils::person()}}.
+Examples in \code{vignette("cffr", package = "cffr")} and \code{\link[utils:person]{utils::person()}}.
 
 Learn more about the \code{cff_pers_lst} and \code{cff_pers} classes in \link{cff_class}.
 

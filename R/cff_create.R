@@ -46,9 +46,9 @@
 #'
 #' - [cff_modify()] as the recommended way to modify a `cff` object.
 #' - [cff_write()] for creating a CFF file.
-#' - `vignette("cffr", "cffr")` shows an introduction on how manipulate
-#'   [`cff`] objects.
-#' - `vignette("crosswalk", package = "cffr")` provides details on how the
+#' - `vignette("cffr", package = "cffr")` shows an introduction on how
+#'   manipulate [`cff`] objects.
+#' - `vignette("r-cff", package = "cffr")` provides details on how the
 #'  metadata of a package is mapped to produce a `cff` object.
 #'
 #' @details

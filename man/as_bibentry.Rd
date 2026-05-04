@@ -52,7 +52,7 @@ info of the package (key \code{preferred-citation}).
 both the \code{preferred-citation} and the \code{references} key.
 }
 
-See \code{vignette("crosswalk", package = "cffr")}.}
+See \code{vignette("r-cff", package = "cffr")}.}
 }
 \value{
 \code{as_bibentry()} returns a \code{bibentry} object with one or more entries.
@@ -74,7 +74,7 @@ entry.
 
 \code{as_bibtex()} tries to map the information of the source \code{x} into a \code{\link{cff}}
 object and performs a mapping of the metadata to BibTeX, according to
-\code{vignette("bibtex_cff", "cffr")}.
+\code{vignette("bibtex-cff", package = "cffr")}.
 }
 \examples{
 \donttest{
@@ -132,11 +132,11 @@ toBibtex(desc_file)
 \seealso{
 \code{\link[utils:bibentry]{utils::bibentry()}} to understand more about the \code{bibentry} class.
 \itemize{
-\item \code{vignette("crosswalk", package = "cffr")} provides details on how the
+\item \code{vignette("r-cff", package = "cffr")} provides details on how the
 metadata of a package is mapped to produce a \code{cff} object.
-\item \code{vignette("bibtex_cff", "cffr")} provides detailed information about the
-internal mapping performed between \code{cff} objects and BibTeX markup (
-both \code{cff} to BibTeX and BibTeX to \code{cff}).
+\item \code{vignette("bibtex-cff", package = "cffr")} provides detailed information
+about the internal mapping performed between \code{cff} objects and BibTeX
+markup (both \code{cff} to BibTeX and BibTeX to \code{cff}).
 }
 
 Other related functions:

@@ -47,7 +47,7 @@ info of the package (key \code{preferred-citation}).
 both the \code{preferred-citation} and the \code{references} key.
 }
 
-See \code{vignette("crosswalk", package = "cffr")}.}
+See \code{vignette("r-cff", package = "cffr")}.}
   }}
 }
 \value{
@@ -107,7 +107,7 @@ utils::readCitationFile(out, meta)
 }
 }
 \seealso{
-\code{vignette("bibtex_cff", "cffr")}, \code{\link[knitr:write_bib]{knitr::write_bib()}} and the
+\code{vignette("bibtex-cff", package = "cffr")}, \code{\link[knitr:write_bib]{knitr::write_bib()}} and the
 following packages:
 \itemize{
 \item \CRANpkg{bibtex}.

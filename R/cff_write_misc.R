@@ -40,7 +40,7 @@
 #' a backup copy in the same directory.
 #'
 #' @seealso
-#' `vignette("bibtex_cff", "cffr")`, [knitr::write_bib()] and the
+#' `vignette("bibtex-cff", package = "cffr")`, [knitr::write_bib()] and the
 #' following packages:
 #' - \CRANpkg{bibtex}.
 #' - \CRANpkg{RefManageR}

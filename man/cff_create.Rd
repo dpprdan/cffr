@@ -102,9 +102,9 @@ cff_create(demo_file, keys = list("contact" = new_contact))
 \itemize{
 \item \code{\link[=cff_modify]{cff_modify()}} as the recommended way to modify a \code{cff} object.
 \item \code{\link[=cff_write]{cff_write()}} for creating a CFF file.
-\item \code{vignette("cffr", "cffr")} shows an introduction on how manipulate
-\code{\link{cff}} objects.
-\item \code{vignette("crosswalk", package = "cffr")} provides details on how the
+\item \code{vignette("cffr", package = "cffr")} shows an introduction on how
+manipulate \code{\link{cff}} objects.
+\item \code{vignette("r-cff", package = "cffr")} provides details on how the
 metadata of a package is mapped to produce a \code{cff} object.
 }
 

@@ -58,7 +58,8 @@ Learn more about the \CRANpkg{cffr} class system in \link{cff_class}.
 }
 \details{
 For \code{as_cff.bibentry()} and \code{as_cff.Bibtex()}, see
-\code{vignette("bibtex_cff", "cffr")} to understand how the mapping is performed.
+\code{vignette("bibtex-cff", package = "cffr")} to understand how the mapping is
+performed.
 
 \code{\link[=as_cff_person]{as_cff_person()}} is preferred over \code{as_cff.person()}, since it can handle
 \code{character} inputs such as \code{"Davis, Jr., Sammy"}. For \code{person} objects both
