@@ -7,10 +7,7 @@
   as a fallback.
 - `doi`: DOIs in `inst/CITATION` `url` fields are detected, including those
   matching the pattern `.*dx.doi.org/`.
-- Improvements to `languages` parsing:
-  - `cff_read()` correctly handles a single `languages` value (#105).
-  - `as_bibentry()` / `toBibtex.cff()` recognize the `languages` field, only the
-    first value is mapped to BibTeX.
+- `cff_read()` correctly handles a single `languages` value (#105).
 
 # cffr 1.3.0
 

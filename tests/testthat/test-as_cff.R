@@ -198,3 +198,50 @@ test_that("Reading languages", {
     c("en", "es", "fr")
   )
 })
+
+test_that("Language round-trip", {
+  lang_file <- system.file("examples/CITATION_lang.cff", package = "cffr")
+
+  cff_lang <- cff_read(lang_file)
+  expect_true(cff_validate(cff_lang, verbose = FALSE))
+
+  expect_identical(
+    cff_lang[["preferred-citation"]]$languages,
+    list("en")
+  )
+
+  expect_identical(
+    cff_lang[["references"]][[1]]$languages,
+    list("en")
+  )
+
+  expect_identical(
+    cff_lang[["references"]][[2]]$languages,
+    c("en", "es", "fr")
+  )
+
+  # Write
+  tmp <- tempfile(fileext = ".cff")
+  cff_write(cff_lang, tmp)
+
+  # And re-check
+  cff_lang <- cff_read(tmp)
+  expect_true(cff_validate(cff_lang, verbose = FALSE))
+
+  expect_identical(
+    cff_lang[["preferred-citation"]]$languages,
+    list("en")
+  )
+
+  expect_identical(
+    cff_lang[["references"]][[1]]$languages,
+    list("en")
+  )
+
+  expect_identical(
+    cff_lang[["references"]][[2]]$languages,
+    c("en", "es", "fr")
+  )
+
+  unlink(tmp)
+})

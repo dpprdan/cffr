@@ -82,7 +82,6 @@ get_bibtex_fields <- function(cit_list) {
   nm[nm == "translator"] <- "translators"
   nm[nm == "urldate"] <- "date-accessed"
   nm[nm == "pagetotal"] <- "pages"
-  nm[nm == "language"] <- "languages"
 
   # Other BibLaTeX fields that does not require any mapping
   # abstract, doi, isbn, issn, url, version

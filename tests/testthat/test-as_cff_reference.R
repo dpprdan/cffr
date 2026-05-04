@@ -784,20 +784,3 @@ test_that("Test R 2026", {
   expect_snapshot(cffobj)
   expect_true(cff_validate(cffobj, verbose = FALSE))
 })
-
-test_that("Language round-trip", {
-  lang_file <- system.file("examples/CITATION_lang.cff", package = "cffr")
-
-  cff_lang <- cff_read(lang_file)
-  expect_true(cff_validate(cff_lang, verbose = FALSE))
-
-  aa <- as_bibentry(cff_lang, what = "all")
-
-  expect_snapshot(
-    toBibtex(aa)
-  )
-
-  back <- as_cff(aa)
-
-  expect_snapshot(back)
-})
