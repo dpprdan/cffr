@@ -67,13 +67,7 @@ is_cff_file <- function(x) {
 #' @param x An object to be evaluated.
 #' @noRd
 is_github <- function(x) {
-  res <- isTRUE(
-    grep(
-      "^http[a-z]://github.com/",
-      x["repository-code"]
-    ) ==
-      1
-  )
+  res <- isTRUE(grep("^http[a-z]://github.com/", x["repository-code"]) == 1)
 
   res
 }

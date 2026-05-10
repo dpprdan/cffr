@@ -172,9 +172,7 @@ get_desc_repository <- function(pkg) {
   # Repo is CRAN
   # Canonic url to CRAN
   if (is_substring(repo, "^CRAN$")) {
-    return(
-      paste0("https://CRAN.R-project.org/package=", name)
-    )
+    return(paste0("https://CRAN.R-project.org/package=", name))
   }
 
   # If not, search on installed repos
@@ -187,11 +185,7 @@ get_desc_repository <- function(pkg) {
 #' Mapped to Package & Title
 #' @noRd
 get_desc_title <- function(pkg) {
-  title <- paste0(
-    pkg$get("Package"),
-    ": ",
-    pkg$get("Title")
-  )
+  title <- paste0(pkg$get("Package"), ": ", pkg$get("Title"))
 
   title <- clean_str(title)
   title
@@ -259,10 +253,7 @@ get_desc_urls <- function(pkg) {
 
   if (isTRUE(length(remaining) > 0)) {
     identifiers <- lapply(remaining, function(x) {
-      list(
-        type = "url",
-        value = clean_str(x)
-      )
+      list(type = "url", value = clean_str(x))
     })
   } else {
     identifiers <- NULL
@@ -299,11 +290,7 @@ get_gh_topics <- function(x) {
   api_url <- paste0(
     "https://api.github.com/repos",
     "/",
-    gsub(
-      "^http[a-z]://github.com/",
-      "",
-      x["repository-code"]
-    )
+    gsub("^http[a-z]://github.com/", "", x["repository-code"])
   )
 
   tmpfile <- tempfile(fileext = ".json")

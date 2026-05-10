@@ -153,11 +153,7 @@ cff_write <- function(
   }
 
   # Issue #79
-  auto_r_citation(
-    r_citation = r_citation,
-    outfile = outfile,
-    verbose = verbose
-  )
+  auto_r_citation(r_citation = r_citation, outfile = outfile, verbose = verbose)
 
   invisible(citat)
 }

@@ -71,12 +71,7 @@ bibtex_pers_von_last_first_jr <- function(x) {
   # Compose final list to be pased to person()
 
   # Last clean up
-  end_list <- list(
-    given = given,
-    von = von,
-    family = family,
-    jr = jr
-  )
+  end_list <- list(given = given, von = von, family = family, jr = jr)
 
   end_list
 }
@@ -149,11 +144,7 @@ bibtex_pers_von_last_first <- function(x) {
   # Compose final list to be pased to person()
 
   # Last clean up
-  end_list <- list(
-    given = given,
-    von = von,
-    family = family
-  )
+  end_list <- list(given = given, von = von, family = family)
 
   end_list
 }
@@ -234,11 +225,7 @@ bibtex_pers_first_von_last <- function(x) {
   # Compose final list to be pased to person()
 
   # Last clean up
-  end_list <- list(
-    given = given,
-    von = von,
-    family = family
-  )
+  end_list <- list(given = given, von = von, family = family)
 
   end_list
 }
@@ -315,10 +302,7 @@ extract_person_comments <- function(person) {
 
   # Special case when coerced from text, only can extract orcid and web
   if (
-    all(
-      any(length(nms_com) == 0, is.na(nms_com)),
-      length(comment_as_text) > 0
-    )
+    all(any(length(nms_com) == 0, is.na(nms_com)), length(comment_as_text) > 0)
   ) {
     split_comments <- unlist(strsplit(comment_as_text, ",| |<|>"))
 
@@ -368,10 +352,7 @@ extract_person_comments <- function(person) {
   email <- look_emails[valid_emails][1]
 
   # Final list
-  fin_list <- c(
-    list(email = NULL),
-    comm_cff["email" != names(comm_cff)]
-  )
+  fin_list <- c(list(email = NULL), comm_cff["email" != names(comm_cff)])
   fin_list$email <- clean_str(email)
 
   fin_list
@@ -452,10 +433,7 @@ extract_person_comments45 <- function(person) {
   email <- look_emails[valid_emails][1]
 
   # Final list
-  fin_list <- c(
-    list(email = NULL),
-    comm_cff["email" != names(comm_cff)]
-  )
+  fin_list <- c(list(email = NULL), comm_cff["email" != names(comm_cff)])
   fin_list$email <- clean_str(email)
   fin_list
 }

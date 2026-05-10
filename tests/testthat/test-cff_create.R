@@ -1,7 +1,5 @@
 test_that("Error if file not exists", {
-  expect_error(
-    cff_create("DESCRIPTION_not_exists")
-  )
+  expect_error(cff_create("DESCRIPTION_not_exists"))
 })
 
 test_that("Test installed packages", {
@@ -102,10 +100,7 @@ test_that("Fuzzy match on cff_create", {
     modobject <- cff_create(newobject, keys = newkeys),
     "tittle: title"
   )
-  expect_snapshot(print_snapshot(
-    "Fuzzy match on cff_create",
-    modobject
-  ))
+  expect_snapshot(print_snapshot("Fuzzy match on cff_create", modobject))
 })
 
 test_that("Test installed packages vs call to file", {
@@ -447,9 +442,7 @@ test_that("Search package on r-universe", {
     CRAN = "https://cloud.r-project.org"
   )
 
-  runiverse <- as.data.frame(available.packages(
-    repos = newrepos
-  ))
+  runiverse <- as.data.frame(available.packages(repos = newrepos))
 
   expect_equal(
     search_on_repos(dhh, runiverse),

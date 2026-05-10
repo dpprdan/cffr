@@ -78,7 +78,7 @@ and the `CITATION` file (if present) from your package. Note that
 **cffr** works best if your package passes
 `R CMD check/devtools::check()`.
 
-As per 2026-05-04 there are at least 530 repos on GitHub using **cffr**.
+As per 2026-05-10 there are at least 570 repos on GitHub using **cffr**.
 [Check them out
 here](https://github.com/search?q=cffr%20path%3A**%2FCITATION.cff&type=code).
 

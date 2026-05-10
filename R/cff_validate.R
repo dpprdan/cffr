@@ -113,9 +113,12 @@ cff_validate <- function(x = "CITATION.cff", verbose = TRUE) {
         "}\n",
         collapse = ""
       )
-      cli::cli_alert_danger(
-        paste0("Oops! ", is_a, " has the following errors:\n", ll)
-      )
+      cli::cli_alert_danger(paste0(
+        "Oops! ",
+        is_a,
+        " has the following errors:\n",
+        ll
+      ))
     }
 
     # Prepare output
@@ -129,9 +132,7 @@ cff_validate <- function(x = "CITATION.cff", verbose = TRUE) {
 
   if (verbose) {
     cli::cat_rule("Validating cff", col = "cyan", line = 2)
-    cli::cli_alert_success(
-      paste0("Congratulations! ", is_a, " is valid")
-    )
+    cli::cli_alert_success(paste0("Congratulations! ", is_a, " is valid"))
   }
   invisible(result)
 }
@@ -139,14 +140,12 @@ cff_validate <- function(x = "CITATION.cff", verbose = TRUE) {
 # Validate schema
 #' @noRd
 validate_schema <- function(cit_temp, schema_temp) {
-  x <- suppressMessages(
-    jsonvalidate::json_validate(
-      cit_temp,
-      schema_temp,
-      verbose = TRUE,
-      engine = "ajv"
-    )
-  )
+  x <- suppressMessages(jsonvalidate::json_validate(
+    cit_temp,
+    schema_temp,
+    verbose = TRUE,
+    engine = "ajv"
+  ))
 
   x
 }

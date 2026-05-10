@@ -226,10 +226,7 @@ create_person_from_r <- function(person) {
 
   if (is_substring(person$given, "Bioconductor")) {
     person <- person(
-      given = paste(
-        clean_str(person$given),
-        clean_str(person$family)
-      ),
+      given = paste(clean_str(person$given), clean_str(person$family)),
       email = person$email,
       role = person$role,
       comment = person$comment
@@ -244,10 +241,7 @@ create_person_from_r <- function(person) {
     )
   ) {
     person <- person(
-      given = paste(
-        clean_str(person$given),
-        clean_str(person$family)
-      ),
+      given = paste(clean_str(person$given), clean_str(person$family)),
       email = person$email,
       role = person$role,
       comment = person$comment
@@ -344,9 +338,10 @@ create_person_from_txt <- function(as_bib_text) {
   # Protect commas on brackets to avoid error counting
   protected <- gsub(",(?![^\\}]*(\\{|$))", "@comma@", person_only, perl = TRUE)
 
-  commas <- as.character(
-    lengths(regmatches(protected, gregexpr(",", protected, fixed = TRUE)))
-  )
+  commas <- as.character(lengths(regmatches(
+    protected,
+    gregexpr(",", protected, fixed = TRUE)
+  )))
 
   # Assign the corresponding fun
   bibtex_name_str <- switch(commas,

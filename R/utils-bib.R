@@ -47,9 +47,10 @@ guess_bibtype <- function(x) {
   # Try guess Inbook ----
   # inbook is a book where chapter or pages are present
   has_chapter <- !is.null(clean_str(x$section))
-  has_pages <- !is.null(
-    clean_str(paste(unique(c(x$start, x$end)), collapse = "--"))
-  )
+  has_pages <- !is.null(clean_str(paste(
+    unique(c(x$start, x$end)),
+    collapse = "--"
+  )))
 
   if (all(init_guess == "book", any(has_chapter, has_pages))) {
     init_guess <- "inbook"
@@ -88,17 +89,15 @@ get_bib_address <- function(x) {
     addr_search <- x$publisher
   }
 
-  address <- clean_str(
-    paste(
-      c(
-        addr_search$address,
-        addr_search$city,
-        addr_search$region,
-        addr_search$country
-      ),
-      collapse = ", "
-    )
-  )
+  address <- clean_str(paste(
+    c(
+      addr_search$address,
+      addr_search$city,
+      addr_search$region,
+      addr_search$country
+    ),
+    collapse = ", "
+  ))
 
   # As a fallback, use also location
   if (is.null(address) && !is.null(x$location)) {

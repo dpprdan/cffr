@@ -16,9 +16,7 @@ abort_if_not_cff <- function(x) {
   guess <- detect_x_source(x)
 
   if (guess != "cff_citation") {
-    cli::cli_abort(
-      "{.var x} is not a {.file *.cff} file."
-    )
+    cli::cli_abort("{.var x} is not a {.file *.cff} file.")
   }
 }
 
@@ -69,9 +67,7 @@ write_lines_msg <- function(lines, file, verbose, append) {
     }
 
     if (verbose) {
-      cli::cli_alert_info(
-        "Creating a backup of {.file {file}} in {.file {f}}"
-      )
+      cli::cli_alert_info("Creating a backup of {.file {file}} in {.file {f}}")
     }
     file.copy(file, f)
   }

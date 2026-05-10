@@ -75,12 +75,10 @@ cff_write_bib <- function(
   }
 
   if (!inherits(x, "bibentry")) {
-    cli::cli_abort(
-      paste0(
-        "{.arg x} should be a {.cls bibentry} object, not a ",
-        "{.cls {class(x)}} object."
-      )
-    )
+    cli::cli_abort(paste0(
+      "{.arg x} should be a {.cls bibentry} object, not a ",
+      "{.cls {class(x)}} object."
+    ))
   }
 
   btex <- toBibtex(x)
@@ -132,12 +130,10 @@ cff_write_citation <- function(
   }
 
   if (!inherits(x, "bibentry")) {
-    cli::cli_abort(
-      paste0(
-        "{.arg x} should be a {.cls bibentry} object, not a ",
-        "{.cls {class(x)}} object."
-      )
-    )
+    cli::cli_abort(paste0(
+      "{.arg x} should be a {.cls bibentry} object, not a ",
+      "{.cls {class(x)}} object."
+    ))
   }
 
   bentr <- format(x, style = "R")

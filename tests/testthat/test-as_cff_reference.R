@@ -541,10 +541,7 @@ test_that("Test entry without author", {
 
   bib_cff <- as_cff(bib)
 
-  expect_identical(
-    bib_cff[[1]]$authors[[1]]$name,
-    "anonymous"
-  )
+  expect_identical(bib_cff[[1]]$authors[[1]]$name, "anonymous")
 
   expect_snapshot(bib_cff)
 
@@ -572,10 +569,7 @@ test_that("Test entry without author but has a key", {
 
   bib_cff <- as_cff(bib)
 
-  expect_identical(
-    bib_cff[[1]]$authors[[1]]$name,
-    "anonymous"
-  )
+  expect_identical(bib_cff[[1]]$authors[[1]]$name, "anonymous")
 
   expect_snapshot(bib_cff)
 
@@ -603,10 +597,7 @@ test_that("Test entry without author and key", {
 
   bib_cff <- as_cff(bib)
 
-  expect_identical(
-    bib_cff[[1]]$authors[[1]]$name,
-    "anonymous"
-  )
+  expect_identical(bib_cff[[1]]$authors[[1]]$name, "anonymous")
 
   expect_snapshot(bib_cff)
 

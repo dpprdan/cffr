@@ -66,10 +66,7 @@ test_that("Fuzzy matching of keys on cff", {
       cff_version = "1.2.0",
       version = "200",
       messange = "aa",
-      anthor = list(list(
-        "family-names" = "a",
-        "given-names" = "b"
-      ))
+      anthor = list(list("family-names" = "a", "given-names" = "b"))
     )
   )
 
@@ -92,14 +89,7 @@ test_that("duplicated", {
 })
 
 test_that("unnamed", {
-  expect_snapshot(
-    ss <- cff(
-      path = "a",
-      "200",
-      "Fix my keys"
-    ),
-    error = TRUE
-  )
+  expect_snapshot(ss <- cff(path = "a", "200", "Fix my keys"), error = TRUE)
 
   expect_snapshot(s1 <- cff(path = NULL, title = "a", "b", version = 1))
   expect_snapshot(

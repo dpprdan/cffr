@@ -106,11 +106,7 @@ cff_to_bibtex <- function(x, what = c("preferred", "references", "all")) {
 cff_from_bibtex <- function(x, encoding = "UTF-8", ...) {
   if (length(x) == 1 && file_exist_abort(x)) {
     if (requireNamespace("lifecycle", quietly = TRUE)) {
-      lifecycle::deprecate_warn(
-        "1.0.0",
-        "cff_from_bibtex()",
-        "cff_read_bib()"
-      )
+      lifecycle::deprecate_warn("1.0.0", "cff_from_bibtex()", "cff_read_bib()")
     }
 
     # Read bib file
@@ -172,11 +168,7 @@ write_bib <- function(
   ascii = FALSE
 ) {
   if (requireNamespace("lifecycle", quietly = TRUE)) {
-    lifecycle::deprecate_warn(
-      "1.0.0",
-      "write_bib()",
-      "cff_write_bib()"
-    )
+    lifecycle::deprecate_warn("1.0.0", "write_bib()", "cff_write_bib()")
   }
 
   cff_write_bib(x, file, append, verbose, ascii)
@@ -263,11 +255,7 @@ write_citation <- function(
 #' as_cff_person("Herbert von Karajan")
 cff_parse_person <- function(person) {
   if (requireNamespace("lifecycle", quietly = TRUE)) {
-    lifecycle::deprecate_warn(
-      "1.0.0",
-      "cff_parse_person()",
-      "as_cff_person()"
-    )
+    lifecycle::deprecate_warn("1.0.0", "cff_parse_person()", "as_cff_person()")
   }
   as_cff_person(person)
 }

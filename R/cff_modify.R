@@ -100,9 +100,7 @@ modify_cff <- function(x, keys, argname = "...") {
 validate_extra_keys <- function(cffobj, argname = "...") {
   has_names <- names(cffobj)
   if (is.null(has_names)) {
-    cli::cli_abort(
-      "Elements in {.arg {argname}} should be named."
-    )
+    cli::cli_abort("Elements in {.arg {argname}} should be named.")
   }
 
   if (any(has_names == "")) {

@@ -54,12 +54,10 @@ cff_gha_update <- function(path = ".", overwrite = FALSE) {
       overwrite = TRUE
     )
   } else {
-    cli::cli_alert_warning(
-      paste0(
-        "File {.file {newfile}} already installed. ",
-        "Use {.arg overwrite = TRUE}  for overwrite"
-      )
-    )
+    cli::cli_alert_warning(paste0(
+      "File {.file {newfile}} already installed. ",
+      "Use {.arg overwrite = TRUE}  for overwrite"
+    ))
   }
 
   if (file_exist_abort(file.path(path, ".Rbuildignore"))) {

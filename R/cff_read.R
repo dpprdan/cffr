@@ -118,12 +118,10 @@ cff_read <- function(path, ...) {
   filetype <- detect_x_source(path)
 
   if (filetype == "dontknow") {
-    cli::cli_abort(
-      paste0(
-        "Don't recognize the file type of {.file {path}}.",
-        " Use a specific function (e.g. {.fn cffr:cff_read_description}"
-      )
-    )
+    cli::cli_abort(paste0(
+      "Don't recognize the file type of {.file {path}}.",
+      " Use a specific function (e.g. {.fn cffr:cff_read_description}"
+    ))
   }
 
   endobj <- switch(filetype,
@@ -218,12 +216,10 @@ cff_read_citation <- function(path, meta = NULL, ...) {
     ex <- packageDescription("cffr")
     # nolint end
 
-    cli::cli_alert_warning(
-      paste0(
-        "{.arg meta} should be {.val NULL} or {.obj_type_friendly {ex}}",
-        " not {.obj_type_friendly {meta}}. Using {.arg meta = NULL}"
-      )
-    )
+    cli::cli_alert_warning(paste0(
+      "{.arg meta} should be {.val NULL} or {.obj_type_friendly {ex}}",
+      " not {.obj_type_friendly {meta}}. Using {.arg meta = NULL}"
+    ))
     meta <- NULL
   }
 
@@ -232,12 +228,10 @@ cff_read_citation <- function(path, meta = NULL, ...) {
 
   # If error then new try
   if (inherits(the_cit, "try-error")) {
-    cli::cli_alert_warning(
-      paste0(
-        "It was not possible to read {.file {path}} with the {.arg meta} ",
-        "provided. Trying with {.code packageDescription('base')}"
-      )
-    )
+    cli::cli_alert_warning(paste0(
+      "It was not possible to read {.file {path}} with the {.arg meta} ",
+      "provided. Trying with {.code packageDescription('base')}"
+    ))
     new_meta <- packageDescription("base")
     the_cit <- try(
       utils::readCitationFile(path, meta = new_meta),
@@ -245,9 +239,7 @@ cff_read_citation <- function(path, meta = NULL, ...) {
     )
     # nocov start
     if (inherits(the_cit, "try-error")) {
-      cli::cli_alert_danger(
-        "Can't read {.file path}, returning {.val NULL}"
-      )
+      cli::cli_alert_danger("Can't read {.file path}, returning {.val NULL}")
       return(NULL)
     }
     # nocov end

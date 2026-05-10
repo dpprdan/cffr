@@ -67,27 +67,25 @@
 cff_read_bib_text <- function(x, encoding = "UTF-8", ...) {
   # Validations
   if (!inherits(x, "character")) {
-    cli::cli_abort(
-      paste0(
-        "{.arg x} should be a {.cls character}, not a ",
-        "{.cls {class(x)}}."
-      )
-    )
+    cli::cli_abort(paste0(
+      "{.arg x} should be a {.cls character}, not a ",
+      "{.cls {class(x)}}."
+    ))
   }
 
   if (any(grepl("\\.bib$", x, ignore.case = TRUE))) {
-    cli::cli_alert_warning(
-      paste0("{.arg x} seems to be a {.val .bib} file, not a BibTeX entry.")
-    )
+    cli::cli_alert_warning(paste0(
+      "{.arg x} seems to be a {.val .bib} file, not a BibTeX entry."
+    ))
     cli::cli_alert_info("Reading {.arg x} with {.fn cffr:cff_read_bib}")
     the_cff <- cff_read_bib(x, encoding = encoding, ...)
     return(the_cff)
   }
 
   if (!any(grepl("^@", x))) {
-    cli::cli_alert_warning(
-      paste0("{.arg x} doesn't look as a BibTeX entry. Check the results.")
-    )
+    cli::cli_alert_warning(paste0(
+      "{.arg x} doesn't look as a BibTeX entry. Check the results."
+    ))
   }
   # Write x to a tempfile
   file <- tempfile(fileext = ".bib")

@@ -274,11 +274,7 @@ other_persons <- function() {
     "translators"
   )
 
-  pers_ent <- sort(unique(c(
-    pers_ent,
-    other_persons_entity(),
-    entity_person()
-  )))
+  pers_ent <- sort(unique(c(pers_ent, other_persons_entity(), entity_person())))
 
   pers_ent
 }
@@ -300,9 +296,6 @@ other_persons_entity <- function() {
 #' This may be entities or persons
 #' @noRd
 entity_person <- function() {
-  forced <- c(
-    "editors",
-    "editors-series"
-  )
+  forced <- c("editors", "editors-series")
   forced
 }

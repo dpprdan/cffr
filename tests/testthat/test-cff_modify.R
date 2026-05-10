@@ -27,10 +27,7 @@ test_that("Can reclass", {
 
   mod <- cff_modify(
     a_cff,
-    contact = list(list(
-      name = "a contact",
-      address = "here"
-    ))
+    contact = list(list(name = "a contact", address = "here"))
   )
 
   expect_true(cff_validate(mod, verbose = FALSE))

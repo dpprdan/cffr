@@ -54,23 +54,23 @@ details about the metadata extraction process.
 
 ## Statement of need
 
-Citation of research software in research projects is often omitted [@salmon2021].
-One reason software is not cited is the lack of clear citation information from
-package developers.
+Citation of research software in research projects is often omitted
+[@salmon2021]. One reason software is not cited is the lack of clear citation
+information from package developers.
 
 Some of the main reasons for citing software used on research are:
 
-1.  **Reproducibility**: Software and its versions are important information
-    to include in any research project. They help peers understand and
-    reproduce the results of a study effectively. Including versions is also
-    crucial for recording the context of a manuscript when software changes.
+1.  **Reproducibility**: Software and its versions are important information to
+    include in any research project. They help peers understand and reproduce
+    the results of a study effectively. Including versions is also crucial for
+    recording the context of a manuscript when software changes.
 2.  **Developer Credit:** In the context of Free and Open Source Software
     (FOSS), many of the software developers themselves are also researchers.
     Receiving credit for software development should be no different from the
     credit received in other formats, such as books or articles.
 
-CITATION.cff files provide clear citation rules for software. The format is
-easy to read by humans and can also be parsed by appropriate software. GitHub's
+CITATION.cff files provide clear citation rules for software. The format is easy
+to read by humans and can also be parsed by appropriate software. GitHub's
 adoption of this format sends a strong message that research software is worthy
 of citation and therefore deserves credit.
 

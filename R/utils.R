@@ -139,15 +139,12 @@ fuzzy_keys <- function(keys) {
     )
 
     # Modify NULL correspondences
-    keys_match <- unlist(lapply(
-      keys_match,
-      function(x) {
-        if (length(x) == 0) {
-          return("No match, removing.")
-        }
-        x[1]
+    keys_match <- unlist(lapply(keys_match, function(x) {
+      if (length(x) == 0) {
+        return("No match, removing.")
       }
-    ))
+      x[1]
+    }))
 
     # Message
     ll <- paste0("{.dt ", names_fuzzy, "}{.dl ", keys_match, "}")
@@ -155,9 +152,7 @@ fuzzy_keys <- function(keys) {
     bullets <- rep("v", length(ll))
     bullets[keys_match == "No match, removing."] <- "x"
     names(ll) <- bullets
-    cli::cli_alert_info(
-      paste0("Found misspelled keys. Trying to map:")
-    )
+    cli::cli_alert_info(paste0("Found misspelled keys. Trying to map:"))
 
     cli::cli_bullets(ll)
     # Modify names

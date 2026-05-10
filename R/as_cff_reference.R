@@ -88,10 +88,7 @@ make_cff_reference <- function(bib) {
   ### final identifiers----
   # Identifies (additional dois and urls)
   if (!is.null(bb_url$identifiers)) {
-    cit_list$identifiers <- append(
-      cit_list$identifiers,
-      bb_url$identifiers
-    )
+    cit_list$identifiers <- append(cit_list$identifiers, bb_url$identifiers)
   }
 
   ## Add thesis type ----
@@ -103,9 +100,13 @@ make_cff_reference <- function(bib) {
   # Last step----
 
   # Initial order but starting with type, title, authors
-  final_order <- unique(
-    c("type", "title", "authors", init_ord, names(cit_list))
-  )
+  final_order <- unique(c(
+    "type",
+    "title",
+    "authors",
+    init_ord,
+    names(cit_list)
+  ))
 
   cit_list <- cit_list[final_order]
 

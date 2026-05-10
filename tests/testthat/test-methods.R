@@ -140,17 +140,19 @@ test_that("as.person method", {
   expect_s3_class(pub, "person")
 
   expect_snapshot(dput(pub))
-  expect_snapshot(
-    format(pub, include = c("given", "family", "email", "role", "comment"))
-  )
+  expect_snapshot(format(
+    pub,
+    include = c("given", "family", "email", "role", "comment")
+  ))
 
   # Single person
   aut <- as.person(getref$authors[[1]])
   expect_s3_class(aut, "person")
   expect_snapshot(dput(aut))
-  expect_snapshot(
-    format(aut, include = c("given", "family", "email", "role", "comment"))
-  )
+  expect_snapshot(format(
+    aut,
+    include = c("given", "family", "email", "role", "comment")
+  ))
 
   # List of authors
   aut2 <- as.person(getref$authors)

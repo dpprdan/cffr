@@ -32,9 +32,7 @@ merge_desc_cit <- function(cffobj, citobj) {
   merged_ids <- c(citobj[[1]]$identifiers, cffobjend$identifiers)
 
   if (has_cran_doi) {
-    cranid <- as_cff(list(
-      list(type = "doi", value = clean_str(cran_doi))
-    ))
+    cranid <- as_cff(list(list(type = "doi", value = clean_str(cran_doi))))
     merged_ids <- c(cranid, merged_ids)
   }
   cffobjend$identifiers <- merged_ids
@@ -95,9 +93,7 @@ enhance_pref_authors <- function(cffobjend) {
 
 get_dependencies <- function(
   desc_path,
-  instpack = as.character(
-    installed.packages()[, "Package"]
-  )
+  instpack = as.character(installed.packages()[, "Package"])
 ) {
   # nocov start
   if (!is.character(desc_path)) {
@@ -201,14 +197,7 @@ get_dependencies <- function(
       mod[c("type", "title", "abstract", "notes", "url", "repository")],
       mod[
         !names(mod) %in%
-          c(
-            "type",
-            "title",
-            "abstract",
-            "notes",
-            "url",
-            "repository"
-          )
+          c("type", "title", "abstract", "notes", "url", "repository")
       ]
     )
 

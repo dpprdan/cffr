@@ -131,9 +131,7 @@ cff_create <- function(
       "bib" = "Maybe try with {.fn cff_read}."
     )
 
-    cli::cli_abort(
-      paste0("{.arg x} not valid. ", msg_hint)
-    )
+    cli::cli_abort(paste0("{.arg x} not valid. ", msg_hint))
   }
 
   # Build cff and return paths if any
@@ -179,10 +177,7 @@ build_cff_and_paths <- function(
   authors_roles = c("aut", "cre"),
   hint_source
 ) {
-  collect_list <- list(
-    desc_path = NULL,
-    cffobjend = NULL
-  )
+  collect_list <- list(desc_path = NULL, cffobjend = NULL)
 
   # "indev", "cff_obj", "package", "description"
 

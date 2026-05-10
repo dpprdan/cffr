@@ -291,7 +291,7 @@ Back to @tbl-summary.
 This key is extracted from the `DESCRIPTION` file. The keywords should appear in
 the `DESCRIPTION` as:
 
-```
+```         
 ...
 X-schema.org-keywords: keyword1, keyword2, keyword3
 ```

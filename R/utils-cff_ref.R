@@ -297,18 +297,12 @@ get_bibtex_doi <- function(cit_list) {
 
   # The rest goes to identifies
   identifiers <- lapply(dois[-1], function(x) {
-    list(
-      type = "doi",
-      value = clean_str(x)
-    )
+    list(type = "doi", value = clean_str(x))
   })
   if (length(identifiers) == 0) {
     identifiers <- NULL
   }
-  doi_list <- list(
-    doi = clean_str(doi),
-    identifiers = identifiers
-  )
+  doi_list <- list(doi = clean_str(doi), identifiers = identifiers)
   doi_list
 }
 
@@ -358,20 +352,14 @@ get_bibtex_url <- function(cit_list) {
 
   # The rest goes to identifies
   identifiers <- lapply(allurls[-1], function(x) {
-    list(
-      type = "url",
-      value = clean_str(x)
-    )
+    list(type = "url", value = clean_str(x))
   })
 
   if (length(identifiers) == 0) {
     identifiers <- NULL
   }
 
-  url_list <- list(
-    url = clean_str(url),
-    identifiers = identifiers
-  )
+  url_list <- list(url = clean_str(url), identifiers = identifiers)
 
   url_list
 }
@@ -393,10 +381,7 @@ get_bibtex_other_pers <- function(field_list) {
   toentity_pers <- others[names(others) %in% toent_pers]
   toentity_pers <- lapply(toentity_pers, function(x) {
     if (inherits(x, "person")) {
-      x <- format(
-        x,
-        include = c("given", "family")
-      )
+      x <- format(x, include = c("given", "family"))
     }
 
     bibtex <- paste(x, collapse = " and ")
@@ -413,10 +398,7 @@ get_bibtex_other_pers <- function(field_list) {
   rest <- lapply(others, function(x) {
     if (length(x) > 1) {
       and <- paste(
-        format(
-          x,
-          include = c("given", "family")
-        ),
+        format(x, include = c("given", "family")),
         collapse = " and "
       )
       and

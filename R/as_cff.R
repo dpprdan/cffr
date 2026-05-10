@@ -216,10 +216,7 @@ rapply_class <- function(x) {
         # Languages: handle single value
         if ("languages" %in% names(j_in)) {
           if (length(j_in$languages) < 2) {
-            j_in$languages <- list(unlist(
-              j_in$languages,
-              use.names = FALSE
-            ))
+            j_in$languages <- list(unlist(j_in$languages, use.names = FALSE))
           }
         }
         j_in

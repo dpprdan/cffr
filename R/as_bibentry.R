@@ -161,12 +161,10 @@ as_bibentry.character <- function(
     # nolint start
     msg <- paste0('install.packages("', x, '")')
     # nolint end
-    cli::cli_abort(
-      paste(
-        "Don't know how to extract a {.cls bibentry} from {.val {x}}.",
-        "If it is a package run {.run {msg}} first."
-      )
-    )
+    cli::cli_abort(paste(
+      "Don't know how to extract a {.cls bibentry} from {.val {x}}.",
+      "If it is a package run {.run {msg}} first."
+    ))
   }
 
   if (src_detect == "package") {
@@ -246,12 +244,10 @@ as_bibentry.cff <- function(
   )
 
   if (is.null(obj_extract)) {
-    cli::cli_alert_warning(
-      paste0(
-        "In {.arg x} didn't find anything with {.arg what} = {.val {what}}. ",
-        "Returning empty {.cls bibentry}."
-      )
-    )
+    cli::cli_alert_warning(paste0(
+      "In {.arg x} didn't find anything with {.arg what} = {.val {what}}. ",
+      "Returning empty {.cls bibentry}."
+    ))
     return(bibentry())
   }
 
@@ -318,9 +314,10 @@ as_bibentry.cff_ref <- function(x, ...) {
   tobibentry$number <- clean_str(x[["issue"]])
 
   ### pages ----
-  tobibentry$pages <- clean_str(
-    paste(unique(c(x$start, x$end)), collapse = "--")
-  )
+  tobibentry$pages <- clean_str(paste(
+    unique(c(x$start, x$end)),
+    collapse = "--"
+  ))
 
   ### publisher ----
   tobibentry$publisher <- clean_str(x$publisher$name)
@@ -379,14 +376,7 @@ as_bibentry.cff_ref <- function(x, ...) {
     all(
       is_anon,
       tobibentry$bibtype %in%
-        c(
-          "booklet",
-          "manual",
-          "book",
-          "inbook",
-          "misc",
-          "proceedings"
-        )
+        c("booklet", "manual", "book", "inbook", "misc", "proceedings")
     )
   ) {
     tobibentry$author <- NULL

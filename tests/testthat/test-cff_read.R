@@ -200,10 +200,7 @@ test_that("cff_read_safe CITATION NULL", {
   desc_path <- system.file("x", package = "cffr")
   cit_path <- system.file("y", package = "cffr")
 
-  expect_null(cff_safe_read_citation(
-    desc_path,
-    cit_path
-  ))
+  expect_null(cff_safe_read_citation(desc_path, cit_path))
 })
 
 test_that("Corrupt CITATION", {
@@ -239,12 +236,7 @@ test_that("Creating cff from packages encoded in latin1", {
   expect_false("latin1" %in% Encoding(unlist(bib)))
 
   # Create cff
-  cffobj <- cff_create(
-    desc_path,
-    keys = list(
-      references = bib
-    )
-  )
+  cffobj <- cff_create(desc_path, keys = list(references = bib))
 
   expect_s3_class(cffobj, "cff")
   expect_snapshot(cffobj)

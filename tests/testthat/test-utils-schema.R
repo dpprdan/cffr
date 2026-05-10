@@ -14,7 +14,5 @@ test_that("Keys snapshot", {
 })
 
 test_that("License run", {
-  expect_silent(
-    cff_schema_keys_license()
-  )
+  expect_silent(cff_schema_keys_license())
 })
