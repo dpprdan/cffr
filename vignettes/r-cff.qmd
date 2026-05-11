@@ -261,13 +261,11 @@ This key includes all the possible identifiers of the package:
 
 - From the `DESCRIPTION` field, it includes all the URLs not included in
   [url](#url) or [repository-code](#repository-code).
-
 - From the `CITATION` file, it includes all the DOIs not included in [doi](#doi)
   and the identifiers (if any) not included in the `"identifiers"` key of
   [preferred-citation](#preferred-citation).
-
-- If the package is on **CRAN** and it has a `CITATION` file providing a doi,
-  the doi provided by **CRAN** is added as well.
+- If the package is on **CRAN** and it has a `CITATION` file providing a DOI,
+  the DOI provided by **CRAN** is added as well.
 
 ```{r}
 #| label: identifiers
